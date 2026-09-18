@@ -1,11 +1,11 @@
 {
   "project": "Anuj Mundu — AI/ML Production Portfolio",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "buildPhase": "Alpha",
-  "commitNumber": 5,
+  "commitNumber": 6,
   "totalCommits": 160,
-  "timestamp": "2026-09-18T17:15:05+05:30",
-  "message": "chore: configure ESLint 9 and Prettier rules",
+  "timestamp": "2026-09-18T18:02:30+05:30",
+  "message": "feat: initialize root layout with viewport and metadata headers",
   "verifiedBenchmarks": {
     "apiLatency": "38.4ms P95",
     "computerVisionMap": "94.8% mAP@50",
