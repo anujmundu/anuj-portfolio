@@ -1,0 +1,15 @@
+{
+  "project": "Anuj Mundu — AI/ML Production Portfolio",
+  "version": "1.0.1",
+  "buildPhase": "Alpha",
+  "commitNumber": 1,
+  "totalCommits": 160,
+  "timestamp": "2026-09-18T14:15:20+05:30",
+  "message": "chore: initialize repository and workspace configuration",
+  "verifiedBenchmarks": {
+    "apiLatency": "38.4ms P95",
+    "computerVisionMap": "94.8% mAP@50",
+    "attritionAuc": "0.89 ROC-AUC",
+    "diabetesSensitivity": "98.2%"
+  }
+}

@@ -1,0 +1,887 @@
+[
+  {
+    "name": "omniforge-ai",
+    "desc": "Production-grade multimodal AI/ML intelligence platform engineered with agentic RAG, neural vision, time-series forecasting, red-teaming security guardrails, distributed worker mesh, and cloud-native Kubernetes Helm deployments.",
+    "lang": "Python",
+    "topics": [
+      "agentic-ai",
+      "celery",
+      "computer-vision",
+      "deep-learning",
+      "distributed-systems",
+      "enterprise-ai",
+      "fastapi",
+      "helm",
+      "kubernetes",
+      "llm-security",
+      "machine-learning",
+      "multimodal-ai",
+      "prompt-injection-defense",
+      "pydantic-v2",
+      "python",
+      "pytorch",
+      "rag",
+      "red-teaming",
+      "redis-queue",
+      "time-series-forecasting"
+    ],
+    "files": [
+      ".dvcignore",
+      ".env.example",
+      ".github",
+      ".gitignore",
+      "Dockerfile",
+      "README.md",
+      "agents",
+      "apps",
+      "deploy",
+      "docker-compose.yml",
+      "docs",
+      "dvc.yaml",
+      "ml",
+      "mlops",
+      "nlp",
+      "observability",
+      "params.yaml",
+      "pyproject.toml",
+      "rag",
+      "requirements.txt",
+      "scripts",
+      "security",
+      "tests",
+      "vision"
+    ],
+    "readmePreview": "# OmniForge — Production-Grade Multimodal AI/ML Intelligence Platform [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/) [![FastAPI](https://img.shields.io/badge/FastAPI-0.111+-009688.svg?logo=fastapi)](https://fastapi.tiangolo.com) [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://anujmundu-omniforge-ai.streamlit.app) [![Docker](https://img.shields.io/badge/Docker-Multi--stage-2496ED.svg?logo=doc"
+  },
+  {
+    "name": "Employee-Attrition-Prediction-Service",
+    "desc": "Production-grade Employee Attrition Prediction system using FastAPI, Scikit-Learn, PyTorch Tabular ResNet/VAE, TreeSHAP explainability, KS drift detection, and What-If retention simulator.",
+    "lang": "Python",
+    "topics": [
+      "anomaly-detection",
+      "data-drift",
+      "data-drifts",
+      "docker",
+      "explainable-ai",
+      "fastapi",
+      "machine-learning",
+      "ml-engineering",
+      "mle",
+      "mlops",
+      "nlp",
+      "production-ml",
+      "pytorch",
+      "scikit-learn",
+      "shap"
+    ],
+    "files": [
+      ".github",
+      ".gitignore",
+      "Dockerfile",
+      "README.md",
+      "data",
+      "docker-compose.yml",
+      "docs",
+      "models",
+      "render.yaml",
+      "requirements.txt",
+      "run.py",
+      "scripts",
+      "src",
+      "tests"
+    ],
+    "readmePreview": "# RetainAI Enterprise: Multi-Domain Employee Attrition Intelligence & MLOps Platform [![Python](https://img.shields.io/badge/Python-3.11-blue.svg)](https://www.python.org/) [![FastAPI](https://img.shields.io/badge/FastAPI-0.110+-green.svg)](https://fastapi.tiangolo.com/) [![PyTorch](https://img.shields.io/badge/PyTorch-2.2+-ee4c2c.svg)](https://pytorch.org/) [![Scikit-Learn](https://img.shields.io/badge/scikit--learn-1.4+-orange.svg)](https://scikit-learn.org/) [![Tests](https://img.shields.io/"
+  },
+  {
+    "name": "lung-nodule-detection",
+    "desc": "Production-Grade Clinical AI CADx Suite for Pulmonary Nodule Detection in Chest X-Ray and CT scans using an Enhanced YOLOv5-CASP framework (CBAM Attention, ASPP Context, CoT3 Transformer) with Lung-RADS™ PACS Workstation & REST API.",
+    "lang": "Python",
+    "topics": [
+      "aspp",
+      "cbam",
+      "chest-xray",
+      "computer-aided-diagnosis",
+      "ct-scan",
+      "deep-learning",
+      "lung-nodule-detection",
+      "medical-imaging",
+      "mri",
+      "object-detection",
+      "pacs",
+      "pytorch",
+      "radiology",
+      "streamlit",
+      "transformer",
+      "yolov5"
+    ],
+    "files": [
+      ".github",
+      ".gitignore",
+      "Detection Results",
+      "Dockerfile",
+      "README.md",
+      "app.py",
+      "app_api.py",
+      "custom_modules.py",
+      "data",
+      "detect.py",
+      "docker-compose.yml",
+      "docs",
+      "evaluation_results",
+      "export_onnx.py",
+      "failure_analysis.csv",
+      "generate_all_plots.py",
+      "packages.txt",
+      "requirements.txt",
+      "run_all_evaluations.py",
+      "sample_images",
+      "src",
+      "tests",
+      "train_all_ablation_models.py",
+      "train_casp.py",
+      "yolov5"
+    ],
+    "readmePreview": "<!-- ========================================================= --> <!-- HERO SECTION --> <!-- ========================================================= --> <h1 align=\"center\"> 🫁 Automated Multi-Modal Lung Nodule Detection using YOLOv5-CASP </h1> <h3 align=\"center\"> A Production-Grade Deep Learning Framework for Accurate Pulmonary Nodule Detection in Chest X-Ray and CT Images using an Enhanced YOLOv5 Architecture with CBAM, ASPP, and CoT3 Modules </h3> <p align=\"center\"> <img src=\"https://"
+  },
+  {
+    "name": "ai-code-review-assistant",
+    "desc": "An AI‑powered GitHub Action that automatically reviews pull‑requests, giving concise, style‑aware feedback using a fine‑tuned LLM. Includes end‑to‑end MLOps: data collection, LoRA fine‑tuning, Docker‑ized inference, CI/CD, and observability dashboards.",
+    "lang": null,
+    "topics": [],
+    "files": [
+      ".gitignore",
+      "LICENSE",
+      "README.md"
+    ],
+    "readmePreview": "# ai-code-review-assistant An AI‑powered GitHub Action that automatically reviews pull‑requests, giving concise, style‑aware feedback using a fine‑tuned LLM. Includes end‑to‑end MLOps: data collection, LoRA fine‑tuning, Docker‑ized inference, CI/CD, and observability dashboards. "
+  },
+  {
+    "name": "anuj-ai-lab",
+    "desc": "Building production-grade AI systems, RAG applications, multimodal agents, and autonomous AI workflows from scratch.",
+    "lang": "Python",
+    "topics": [],
+    "files": [
+      ".env.example",
+      ".gitignore",
+      "README.md",
+      "assets",
+      "backend",
+      "frontend",
+      "infrastructure",
+      "netlify.toml",
+      "notebooks",
+      "portfolio",
+      "scripts",
+      "web"
+    ],
+    "readmePreview": "# 🚀 Anuj AI Lab > **A production-grade Local AI Engineering Platform for building Retrieval-Augmented Generation (RAG), AI Assistants, Memory Systems, Tool Calling, and Agentic AI workflows using FastAPI, React, TypeScript, Ollama, and ChromaDB.** Build modern AI systems completely on your own machine—from document ingestion and semantic retrieval to diagnostics, observability, memory, and autonomous AI agents—all inside a modular, scalable engineering platform. --- ![Python](https://img.sh"
+  },
+  {
+    "name": "Diabetes-Prediction-System",
+    "desc": "EndoGuard CDSS™ • Enterprise Clinical Decision Support System for early-stage diabetes risk stratification, HL7 FHIR R4 interoperability, Explainable AI (SHAP), and HIPAA-compliant HITL triaging using Deep Tabular Neural Networks & Stacking ensembles.",
+    "lang": "Python",
+    "topics": [],
+    "files": [
+      ".gitignore",
+      "README.md",
+      "app.py",
+      "data",
+      "logs",
+      "main.py",
+      "models",
+      "notebooks",
+      "reports",
+      "requirements.txt",
+      "src",
+      "tests"
+    ],
+    "readmePreview": "# 🩺 EndoGuard CDSS™ • Clinical Decision Support System for Diabetes Risk Stratification An enterprise-grade, FHIR-native Clinical Decision Support System (CDSS) and machine learning platform for early-stage diabetes detection, risk stratification, explainable AI (XAI), and clinician-in-the-loop (HITL) triaging. --- ## 📌 Key Highlights & Capabilities 1. **Multi-Hospital Clinical Cohort (`2,500 Records`)**:    - Harmonized multi-center dataset incorporating baseline clinical registries, inpa"
+  },
+  {
+    "name": "anujmundu.md",
+    "desc": null,
+    "lang": null,
+    "topics": [],
+    "files": [
+      "README.md",
+      "assets"
+    ],
+    "readmePreview": "<!-- Header Banner --> <img src=\"assets/header.svg\" width=\"100%\" alt=\"Glass Banner\"> <br/> <!-- About Section --> <img src=\"assets/about.svg\" width=\"100%\" alt=\"Glass About\"> <br/> <!-- Skills Section --> <img src=\"assets/skills.svg\" width=\"100%\" alt=\"Glass Stack\"> <br/> <!-- GitHub Stats (external render) --> <img src=\"https://ryme.md/api/render/glass-github-stats?u=anujmundu&bg=0b0b12&fg=22d3ee&accent=7c3aed&muted=f472b6\" width=\"100%\" alt=\"Glass GitHub\"> <br/> <!-- Footer --> <img src=\""
+  },
+  {
+    "name": "ProfileForge",
+    "desc": null,
+    "lang": "Python",
+    "topics": [],
+    "files": [
+      ".gitattributes",
+      ".github",
+      ".gitignore",
+      "CHANGELOG.md",
+      "CODE_OF_CONDUCT.md",
+      "CONTRIBUTING.md",
+      "LICENSE",
+      "README.md",
+      "SECURITY.md",
+      "assets",
+      "benchmarks",
+      "config",
+      "dist",
+      "docs",
+      "examples",
+      "pyproject.toml",
+      "reports",
+      "requirements-dev.txt",
+      "requirements.txt",
+      "scripts",
+      "src",
+      "tests"
+    ],
+    "readmePreview": "<div align=\"center\">   <img src=\"docs/assets/banner.svg\" alt=\"ProfileForge Banner\" width=\"100%\" />   <br />   <br />   # ⚡ ProfileForge   **A production-grade, highly deterministic platform for self-updating GitHub profile READMEs and animated SVG graphics.**   <br />   [![Release](https://img.shields.io/badge/release-v1.0.0-blue.svg?style=for-the-badge&logo=github)](https://github.com/anujmundu/ProfileForge/releases)   [![Build Status](https://img.shields.io/badge/build-passing-brightgreen"
+  },
+  {
+    "name": "rf-signal-classification-spectrograms",
+    "desc": "Custom project for RF signal classification using spectrograms and deep learning.",
+    "lang": "Python",
+    "topics": [],
+    "files": [
+      ".github",
+      ".gitignore",
+      "CHANGELOG.md",
+      "CODE_OF_CONDUCT.md",
+      "CONTRIBUTING.md",
+      "LICENSE",
+      "README.md",
+      "SECURITY.md",
+      "outputs",
+      "pyproject.toml",
+      "requirements.txt",
+      "rf_signal_classification-1.0.0",
+      "src",
+      "tests",
+      "validate_deployment.py",
+      "validate_observability.py"
+    ],
+    "readmePreview": "# RF Signal Classification Framework <div align=\"center\"> [![Release](https://img.shields.io/badge/version-1.0.0-blue.svg)](CHANGELOG.md) [![Python Version](https://img.shields.io/badge/python-3.10%20%7C%203.11%20%7C%203.12-brightgreen.svg)](pyproject.toml) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) [![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg)](.github/workflows/tests.yml) [![Tests](https://img.shields.io/badge/tests-128%20pa"
+  },
+  {
+    "name": "Tv-Show-Popularity-Analysis",
+    "desc": "Interactive Streamlit dashboard to analyze TV show ratings, platforms, and clusters with configurable ML methods.",
+    "lang": "Jupyter Notebook",
+    "topics": [
+      "clustering",
+      "dashboard",
+      "data-visualization",
+      "hotstar",
+      "hulu",
+      "machine-learning",
+      "netflix",
+      "prime-video",
+      "python",
+      "ratings-analysis",
+      "streamlit",
+      "tv-shows"
+    ],
+    "files": [
+      "Age Rating Distribution.png",
+      "Bottom 20 Shows by IMDb.png",
+      "Clustering Comparison.png",
+      "DBSCAN Cluster Averages.png",
+      "DBSCAN Clustering.png",
+      "Hierarchical Cluster Average.png",
+      "Hierarchical Clustering Dendrogram.png",
+      "Hierarchical Clustering.png",
+      "IMDb Rating Distribution.png",
+      "K-Means Cluster Averages.png",
+      "K-Means Clustering.png",
+      "README.md",
+      "Release Year Distribution.png",
+      "Shows by Platform.png",
+      "TVShowAnalysis.ipynb",
+      "TVShowTrendsAnalysis.ipynb",
+      "Top 20 Shows by IMDb.png",
+      "Tv_Show_Analysis.ipynb",
+      "WordCloud.png",
+      "app.py",
+      "cluster counts.png",
+      "cluster_comparison.csv",
+      "clustered_tv_shows.csv",
+      "dbscan_label_map.png",
+      "hc_label_map.png",
+      "kmeans_label_map.png",
+      "requirements.txt",
+      "tv_shows.csv",
+      "tvshowanalysis.py",
+      "tvshowanalysis_clean.py"
+    ],
+    "readmePreview": "# TV Show Popularity Analysis Interactive Streamlit dashboard and notebooks to explore TV show ratings, platforms, and clusters. ## Quickstart 1. Install dependencies: ```bash pip install -r requirements.txt ``` 2. Prepare data: - Place `tv_shows.csv` in this folder, or - Use the file uploader in the app to upload your CSV. 3. Run the app: ```bash streamlit run app.py ``` ## CSV Requirements Minimum columns expected by the app (case-insensitive): - `Title` - `IMDb` - `Rotten Tomatoes` ("
+  },
+  {
+    "name": "technical-event-erp-flask",
+    "desc": "Role-based Event Management ERP System built with Flask, implementing Admin, Vendor, and User workflows including catalog management, cart, checkout, and order lifecycle tracking.",
+    "lang": "HTML",
+    "topics": [
+      "bootstrap",
+      "business-workflow",
+      "coreui",
+      "erp-system",
+      "event-management",
+      "flask",
+      "full-stack-project",
+      "jinja2",
+      "order-management",
+      "python",
+      "role-based-authentication",
+      "sqlalchemy",
+      "web-application"
+    ],
+    "files": [
+      ".gitignore",
+      "README.md",
+      "app.py",
+      "auth_utils.py",
+      "extensions.py",
+      "models.py",
+      "render.yaml",
+      "requirements.txt",
+      "screenshots",
+      "static",
+      "templates"
+    ],
+    "readmePreview": "# Technical Event Management ERP System # Technical Event ERP System 🔗 **Live Application:**   https://technical-event-erp-flask.onrender.com ![Python](https://img.shields.io/badge/Python-3.x-blue) ![Flask](https://img.shields.io/badge/Flask-Web%20Framework-black) ![ERP](https://img.shields.io/badge/Project-ERP%20System-green) A simple Flask-based event management ERP with user, vendor, and admin portals. Uses SQLite and SQLAlchemy for persistence. The frontend is styled with the CoreUI the"
+  },
+  {
+    "name": "distributed-hyperparameter-tuner",
+    "desc": "Distributed hyperparameter tuning framework using RabbitMQ, PostgreSQL, and Python with scheduler-worker architecture.",
+    "lang": "Python",
+    "topics": [
+      "distributed-systems",
+      "docker",
+      "hyperparameter-tuning",
+      "machine-learning",
+      "ml-infrastructure",
+      "postgresql",
+      "python",
+      "pytorch",
+      "rabbitmq",
+      "scikit-learn"
+    ],
+    "files": [
+      ".gitignore",
+      "README.md",
+      "cli",
+      "common",
+      "configs",
+      "docker",
+      "requirements.txt",
+      "scheduler",
+      "scripts",
+      "worker"
+    ],
+    "readmePreview": "# Distributed Hyperparameter Tuning Framework ## Overview A scalable, distributed system designed to parallelize machine learning hyperparameter optimization. This framework decouples job scheduling from execution, allowing you to run computationally intensive tuning jobs across multiple worker nodes. It uses **RabbitMQ** for reliable message queuing and **PostgreSQL** for persistent storage of experiment results and metrics. By moving away from sequential execution, this project enables faste"
+  },
+  {
+    "name": "reinforcement-learning-job-scheduling",
+    "desc": "Reinforcement Learning based job scheduling using PPO with heuristic baselines",
+    "lang": "Python",
+    "topics": [
+      "ai-engineering",
+      "baseline-comparison",
+      "custom-gym-environment",
+      "deep-reinforcement-learning",
+      "gantt-chart",
+      "gymnasium",
+      "job-scheduling",
+      "makespan-minimization",
+      "ml-engineering",
+      "optimization",
+      "ppo",
+      "python",
+      "reinforcement-learning",
+      "scheduling-algorithms",
+      "stable-baselines3"
+    ],
+    "files": [
+      ".gitignore",
+      "README.md",
+      "baselines.py",
+      "fcfs_baseline.py",
+      "img",
+      "job_scheduling_env.py",
+      "plot_gantt.py",
+      "sjf_baseline.py",
+      "test_random_policy.py",
+      "train_ppo.py",
+      "visualize_fcfs.py",
+      "visualize_ppo.py",
+      "visualize_sjf.py"
+    ],
+    "readmePreview": "# Reinforcement Learning for Job Scheduling ![Python](https://img.shields.io/badge/Python-3.8%2B-blue) ![Gymnasium](https://img.shields.io/badge/Gymnasium-Standard-green) ![Stable Baselines3](https://img.shields.io/badge/Stable%20Baselines3-PPO-orange) ![License](https://img.shields.io/badge/License-MIT-lightgrey) > **Optimizing single-machine job scheduling to minimize makespan using Proximal Policy Optimization (PPO).** ## Overview This project explores the application of **Deep Reinforceme"
+  },
+  {
+    "name": "chatit",
+    "desc": "Real-time chat app built with Next.js and Prisma, featuring modern UI and Vercel deployment support.",
+    "lang": "TypeScript",
+    "topics": [
+      "chat-app",
+      "frontend",
+      "messaging",
+      "nextjs",
+      "prisma",
+      "react",
+      "real-time",
+      "typescript",
+      "vercel",
+      "web-app"
+    ],
+    "files": [
+      ".env.example",
+      ".gitignore",
+      "README.md",
+      "components.json",
+      "next.config.ts",
+      "package-lock.json",
+      "package.json",
+      "postcss.config.mjs",
+      "prisma",
+      "public",
+      "src",
+      "tsconfig.json"
+    ],
+    "readmePreview": "This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app). ## Getting Started First, run the development server: ```bash npm run dev # or yarn dev # or pnpm dev # or bun dev ``` Open [http://localhost:3000](http://localhost:3000) with your browser to see the result. You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file. This project uses [`next/font`]("
+  },
+  {
+    "name": "Maritime-FuelEU",
+    "desc": "Full-stack FuelEU Maritime compliance platform with React, TypeScript, Node.js, and PostgreSQL. Features route management, emissions comparison, compliance balance, banking, and pooling with Hexagonal architecture.",
+    "lang": "TypeScript",
+    "topics": [
+      "compliance-platform",
+      "emissions-tracking",
+      "express",
+      "fueleu-maritime",
+      "hexagonal-architecture",
+      "nodejs",
+      "postgresql",
+      "prisma",
+      "react",
+      "typescript"
+    ],
+    "files": [
+      "AGENT_WORKFLOW.md",
+      "Backend",
+      "README.md",
+      "REFLECTION.md",
+      "frontend"
+    ],
+    "readmePreview": "# ⚓ FuelEU Maritime — Full-Stack Compliance Platform ### 🚀 Full-Stack Developer Assignment (FuelEU Maritime) This project implements a **FuelEU Maritime Compliance Platform** with a structured **React + TypeScript + Node.js + PostgreSQL** stack following **Hexagonal (Ports & Adapters)** architecture. It demonstrates how to build an end-to-end compliance system handling: - Route management   - Emissions comparison   - Compliance balance (CB) computation   - Banking and pooling features (Artic"
+  },
+  {
+    "name": "Mass-Mail-Dispatcher",
+    "desc": "Lightweight Flask app to upload CSVs, validate emails, and send messages via Gmail with secure .env setup.",
+    "lang": "Python",
+    "topics": [
+      "automation",
+      "bootstrap-ui",
+      "csv-upload",
+      "email-dispatcher",
+      "email-validation",
+      "flask",
+      "gmail-integration",
+      "mass-mail",
+      "python",
+      "web-app"
+    ],
+    "files": [
+      "DataValidation_SampleDataset.csv",
+      "README.md",
+      "app.py",
+      "requirements.txt",
+      "static",
+      "templates",
+      "uploads",
+      "utils",
+      "venv"
+    ],
+    "readmePreview": "# 📬 Mass Mail Dispatcher A lightweight Flask app that: - Uploads `.csv` files - Parses & validates email addresses - Shows valid/invalid results - Lets you compose + send emails via Gmail - Offers CSV export for results ## 🚀 Features - ✅ CSV Upload with auto email column detection - ✅ Email syntax validation via `email-validator` - ✅ Clean Bootstrap UI for results display - ✅ Export valid/invalid emails separately - ✅ Compose & send emails using your Gmail credentials - ✅ `.env`-based crede"
+  },
+  {
+    "name": "AI-Curve-Fitting-Assignment",
+    "desc": "AI assignment on parametric curve estimation using entropy-based optimization with L1 loss and visualization.",
+    "lang": "Jupyter Notebook",
+    "topics": [
+      "curve-fitting",
+      "data-visualization",
+      "differential-evolution",
+      "l1-loss",
+      "machine-learning",
+      "optimization",
+      "parametric-curves",
+      "powell-method",
+      "python",
+      "research-assignment"
+    ],
+    "files": [
+      "Readme.md",
+      "curve_fit.png",
+      "notebook.ipynb",
+      "parameter_estimation_ai_assignment.py",
+      "xy_data.csv"
+    ],
+    "readmePreview": ""
+  },
+  {
+    "name": "profit-predictor",
+    "desc": "Machine learning web app that predicts company profit from R&D, admin, and marketing spend using FastAPI + Streamlit.",
+    "lang": "Jupyter Notebook",
+    "topics": [
+      "business-forecasting",
+      "data-analysis",
+      "fastapi",
+      "machine-learning",
+      "numpy",
+      "pandas",
+      "profit-prediction",
+      "scikit-learn",
+      "streamlit",
+      "web-app"
+    ],
+    "files": [
+      ".gitignore",
+      ".streamlit",
+      "README.md",
+      "api.py",
+      "app.py",
+      "csv_file.csv",
+      "generate_csv.py",
+      "input_500_companies.csv",
+      "profit_prediction.ipynb",
+      "requirements.txt"
+    ],
+    "readmePreview": "# 💼 Profit Predictor App A machine learning–powered web application that forecasts company profit based on R&D, administration, and marketing spending. Built with FastAPI + Streamlit for a smooth backend-frontend combo and ready for batch or single predictions. ## 🧠 Author **Anuj Mundu**   Passionate about machine learning, web development, and algorithmic problem solving.   📧 Email: anujmark.edwin.ame@gmail.com   🔗 [GitHub](https://github.com/anujmundu) | [LinkedIn](https://linkedin.com/"
+  },
+  {
+    "name": "ddos-entropy-simulator",
+    "desc": "Full-stack simulation platform for entropy-based DDoS detection. Visualizes anomalous traffic patterns with real-time charts and evaluates accuracy, precision, recall, and F1 score.",
+    "lang": "JavaScript",
+    "topics": [
+      "chartjs",
+      "cybersecurity",
+      "ddos-detection",
+      "entropy-analysis",
+      "express",
+      "network-security",
+      "nodejs",
+      "react",
+      "real-time-visualization",
+      "simulation-platform"
+    ],
+    "files": [
+      "README.md",
+      "backend",
+      "frontend",
+      "node_modules"
+    ],
+    "readmePreview": "# 🛡️ Entropy-Based DDoS Detection Simulation Platform A full-stack simulation platform for detecting Distributed Denial of Service (DDoS) attacks using entropy-based statistical analysis. Built with React, Node.js, Express, and Chart.js, this project visualizes detection metrics in real time and demonstrates how entropy can identify anomalous traffic patterns. --- ## 📌 Project Overview This platform simulates network traffic and applies entropy-based detection to identify potential DDoS at"
+  },
+  {
+    "name": "anuj-portfolio",
+    "desc": "Personal portfolio showcasing projects, skills, and achievements. Built with modern web technologies.",
+    "lang": "JavaScript",
+    "topics": [
+      "developer-profile",
+      "frontend",
+      "javascript",
+      "personal-website",
+      "portfolio",
+      "projects",
+      "react",
+      "responsive-design",
+      "showcase",
+      "web-development"
+    ],
+    "files": [
+      ".env",
+      ".env.example",
+      ".gitignore",
+      "README.md",
+      "netlify.toml",
+      "package-lock.json",
+      "package.json",
+      "public",
+      "src"
+    ],
+    "readmePreview": "# Getting Started with Create React App This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). ## Available Scripts In the project directory, you can run: ### `npm start` Runs the app in the development mode.\\ Open [http://localhost:3000](http://localhost:3000) to view it in your browser. The page will reload when you make changes.\\ You may also see any lint errors in the console. ### `npm test` Launches the test runner in the interactive wat"
+  },
+  {
+    "name": "live-polling-system",
+    "desc": "Real-time polling app for teachers & students with React, Express, and Socket.IO.",
+    "lang": "JavaScript",
+    "topics": [
+      "authentication",
+      "express",
+      "node-js",
+      "nodejs",
+      "react",
+      "real-time",
+      "role-based-access",
+      "socketio",
+      "web-application"
+    ],
+    "files": [
+      "README.md",
+      "client",
+      "server"
+    ],
+    "readmePreview": "# Live Polling System A secure, modular real-time polling app for teachers and students. Built with **React**, **Express**, and **Socket.IO**, it supports encrypted authentication, role-based flows, and robust poll lifecycle enforcement. --- ## Features - 🔐 Encrypted token-based socket authentication - 🧑‍🏫 Role-based flows for teacher and student - ⏱️ Poll lifecycle enforcement (all answered or 60s timeout) - 📦 Modular backend logic (`pollManager.js`, `socket/index.js`) - ⚙️ CRA frontend"
+  },
+  {
+    "name": "python-unit-testing",
+    "desc": "Python project with formatted_name function and unit tests using unittest framework.",
+    "lang": "Python",
+    "topics": [
+      "demo-project",
+      "name-formatter",
+      "python",
+      "python3",
+      "software-testing",
+      "string-manipulation",
+      "test-driven-development",
+      "unit-testing",
+      "unittest",
+      "validation"
+    ],
+    "files": [
+      ".gitignore",
+      "README.md",
+      "TEST_RESULTS.md",
+      "THEORY_EXPLANATION.md",
+      "demo_script.py",
+      "main_demo.py",
+      "name_function.py",
+      "requirements.txt",
+      "test_name_function.py"
+    ],
+    "readmePreview": "# Python Unit Testing Assignment: name formatter This small project implements a `formatted_name` function and comprehensive unit tests using Python's built-in `unittest` framework. Files included - `name_function.py` — contains `formatted_name(first, last, middle='')` which returns a neatly formatted full name. It strips whitespace, validates required fields, and capitalizes name parts using `title()` to handle hyphens and apostrophes. - `test_name_function.py` — unit tests covering normal u"
+  },
+  {
+    "name": "Image-Classification-using-Neural-Network",
+    "desc": "A deep learning project that classifies dog and cat images using a custom CNN built with PyTorch. Includes data preprocessing, training, evaluation, and visualization with modular code for easy experimentation. Achieves 92%+ accuracy with Git LFS support for large datasets.",
+    "lang": "Jupyter Notebook",
+    "topics": [
+      "ann",
+      "cnn",
+      "computer-vision",
+      "data-preprocessing",
+      "deep-learning",
+      "dogs-vs-cats",
+      "image-classification",
+      "machine-learning",
+      "neural-networks",
+      "python",
+      "pytorch"
+    ],
+    "files": [
+      ".gitattributes",
+      "Image_Classification_Neural_Network.ipynb",
+      "README.md",
+      "Result",
+      "Subject_1.jpg",
+      "Subject_2.jpeg",
+      "Subject_3.jpeg",
+      "ann_image_classifier.keras",
+      "cnn_image_classifier.keras",
+      "requirements.txt",
+      "test",
+      "train"
+    ],
+    "readmePreview": "🧠 Image Classification using Neural Network A deep learning project that classifies images of dogs and cats using a custom neural network built with PyTorch. This repository includes data preprocessing, model training, evaluation, and visualization. 📁 Project Structure Code Image-Classification-using-Neural-Network/ ├── train/ │   ├── dogs/ │   └── cats/ ├── model.py ├── train.py ├── requirements.txt ├── .gitignore ├── .gitattributes └── README.md 🚀 Features Custom CNN architecture using PyT"
+  },
+  {
+    "name": "live-code-notes-platform",
+    "desc": "A real-time collaborative code notes platform with JWT authentication, MongoDB persistence, and Socket.IO based live editing.",
+    "lang": "JavaScript",
+    "topics": [
+      "collaboration",
+      "express",
+      "jwt",
+      "mongodb",
+      "mongoose",
+      "nodejs",
+      "realtime",
+      "socketio"
+    ],
+    "files": [
+      ".gitignore",
+      "README.md",
+      "backend",
+      "frontend"
+    ],
+    "readmePreview": "# Live Code Notes Platform Live Code Notes Platform is a real-time collaborative note-taking application designed for writing, editing, and sharing code-centric notes. It combines secure authentication, persistent storage, and live synchronization to enable multiple users to work on notes seamlessly. The project is built as a full-stack application with a clear separation between backend services and frontend UI. --- ## Features - User authentication using JWT - Secure, user-scoped notes - "
+  },
+  {
+    "name": "Distributed-Task-Processing-Workflow-Engine",
+    "desc": "Distributed task processing engine built with FastAPI, Redis, PostgreSQL, and React. Supports async execution, retries, failure handling, status tracking, and metrics.",
+    "lang": "Python",
+    "topics": [],
+    "files": [
+      ".env",
+      ".env.example",
+      ".gitignore",
+      "README.md",
+      "app",
+      "frontend",
+      "package-lock.json",
+      "requirements.txt"
+    ],
+    "readmePreview": "# Distributed Task Processing & Workflow Engine A production-style distributed task processing system built with **FastAPI**, **Redis**, **PostgreSQL**, and a minimal **React** frontend. Designed to demonstrate real backend engineering fundamentals: asynchronous execution, retries, durability, and observability. --- ## 🚀 Overview This project implements a **distributed task engine** where: - Tasks are ingested via a REST API   - Tasks are queued using Redis   - Background workers process "
+  },
+  {
+    "name": "ai-resume-screening",
+    "desc": "The AI Resume Screening System automates candidate evaluation by extracting skills, experience, and education from text, PDF, or image resumes. It applies a normalized 0–100 scoring algorithm, delivers shortlist/reject decisions, and presents recruiter‑friendly dashboards with metrics, ensuring fairness, speed, and clarity in hiring.",
+    "lang": "Python",
+    "topics": [],
+    "files": [
+      ".gitignore",
+      "README.md",
+      "ai_extractor.py",
+      "app.py",
+      "requirements.txt",
+      "resume_parser.py",
+      "scoring_logic.py",
+      "storage.py"
+    ],
+    "readmePreview": " # AI Resume Screening System An intelligent, recruiter‑friendly web application built with **Flask**, **MongoDB**, and **AI/ML** that automates resume screening.   It extracts key information from resumes (skills, experience, education), scores candidates on a normalized **0–100 scale**, and provides a clean dashboard for recruiters to review results. --- ## 🚀 Features - **Text Screening**: Paste resume text directly into the app and get instant scoring. - **File Uploads**: Upload resumes"
+  },
+  {
+    "name": "email-triage-api",
+    "desc": "“Flask + MongoDB API for automated email triage with analytics endpoints.”",
+    "lang": "Python",
+    "topics": [],
+    "files": [
+      ".gitignore",
+      "Procfile",
+      "README.md",
+      "actions.py",
+      "ai_classifier.py",
+      "app.py",
+      "decision_logic.py",
+      "emails.db",
+      "requirements.txt",
+      "storage.py",
+      "utils.py"
+    ],
+    "readmePreview": "# 📧 Email Triage Automation API A production‑ready **Flask + MongoDB application** that classifies incoming emails using AI logic, applies deterministic decision rules, and stores results for analytics.   This project demonstrates **full‑stack engineering, API design, and business‑focused automation** — built to showcase professional polish and recruiter‑ready skills. --- ## 🚀 Features - **AI Classifier (Mock + Extensible)**     Classifies emails into `support`, `sales`, `spam`, or `other` "
+  },
+  {
+    "name": "AgroPulse",
+    "desc": null,
+    "lang": "HTML",
+    "topics": [],
+    "files": [
+      ".gitignore",
+      "Scripts",
+      "app.py",
+      "render.yaml",
+      "requirements.txt",
+      "templates"
+    ],
+    "readmePreview": ""
+  },
+  {
+    "name": "profit-prediction-app",
+    "desc": null,
+    "lang": "Jupyter Notebook",
+    "topics": [],
+    "files": [
+      "Dockerfile",
+      "Procfile",
+      "ProfitPrediction.ipynb",
+      "app.py",
+      "csv_file.csv",
+      "profit_prediction_model.pkl",
+      "requirements.txt",
+      "runtime.txt",
+      "scaler.pkl",
+      "static",
+      "templates"
+    ],
+    "readmePreview": ""
+  },
+  {
+    "name": "CollegeManagementSystem",
+    "desc": null,
+    "lang": "JavaScript",
+    "topics": [],
+    "files": [
+      ".env",
+      ".gitignore",
+      "backend",
+      "frontend",
+      "gitattributes"
+    ],
+    "readmePreview": ""
+  },
+  {
+    "name": "College-Managemant",
+    "desc": null,
+    "lang": "JavaScript",
+    "topics": [],
+    "files": [
+      ".env",
+      ".gitignore",
+      "backend",
+      "frontend",
+      "gitattributes"
+    ],
+    "readmePreview": ""
+  },
+  {
+    "name": "College-Management-System",
+    "desc": null,
+    "lang": null,
+    "topics": [],
+    "files": [
+      ".env",
+      ".gitignore",
+      "backend",
+      "frontend",
+      "gitattributes"
+    ],
+    "readmePreview": ""
+  },
+  {
+    "name": "practicalrepo",
+    "desc": null,
+    "lang": "HTML",
+    "topics": [],
+    "files": [
+      "README.md",
+      "index.html",
+      "style.css"
+    ],
+    "readmePreview": "# This is a file repository for practical  <br> Author : Anuj Mundu"
+  },
+  {
+    "name": "localrepo",
+    "desc": null,
+    "lang": "HTML",
+    "topics": [],
+    "files": [
+      "README.md",
+      "index.html",
+      "style.css"
+    ],
+    "readmePreview": "# This is my Local Repo, It has new features "
+  },
+  {
+    "name": "Project-demo",
+    "desc": "This is my first Git Repository.",
+    "lang": "HTML",
+    "topics": [],
+    "files": [
+      "README.md",
+      "index.html"
+    ],
+    "readmePreview": "# Project-demo This is my first Git Repository. <br> Author - Anuj Mundu (Maulana Azad National Institute of Technology Bhopal)  "
+  }
+]
