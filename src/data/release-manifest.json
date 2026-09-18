@@ -1,11 +1,11 @@
 {
   "project": "Anuj Mundu — AI/ML Production Portfolio",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "buildPhase": "Alpha",
-  "commitNumber": 6,
+  "commitNumber": 7,
   "totalCommits": 160,
-  "timestamp": "2026-09-18T18:02:30+05:30",
-  "message": "feat: initialize root layout with viewport and metadata headers",
+  "timestamp": "2026-09-18T18:48:15+05:30",
+  "message": "feat: configure Geist and Fira Code typography pipelines",
   "verifiedBenchmarks": {
     "apiLatency": "38.4ms P95",
     "computerVisionMap": "94.8% mAP@50",
