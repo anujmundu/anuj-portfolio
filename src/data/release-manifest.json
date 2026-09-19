@@ -1,11 +1,11 @@
 {
   "project": "Anuj Mundu — AI/ML Production Portfolio",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "buildPhase": "Alpha",
-  "commitNumber": 12,
+  "commitNumber": 13,
   "totalCommits": 160,
-  "timestamp": "2026-09-19T14:58:35+05:30",
-  "message": "feat(layout): implement theme toggle (dark/light) with local storage sync",
+  "timestamp": "2026-09-19T15:42:10+05:30",
+  "message": "feat(layout): add audio synthesizer mute toggle in header",
   "verifiedBenchmarks": {
     "apiLatency": "38.4ms P95",
     "computerVisionMap": "94.8% mAP@50",
