@@ -1,11 +1,11 @@
 {
   "project": "Anuj Mundu — AI/ML Production Portfolio",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "buildPhase": "Alpha",
-  "commitNumber": 11,
+  "commitNumber": 12,
   "totalCommits": 160,
-  "timestamp": "2026-09-19T14:15:20+05:30",
-  "message": "feat(layout): create responsive Navbar component with desktop navigation",
+  "timestamp": "2026-09-19T14:58:35+05:30",
+  "message": "feat(layout): implement theme toggle (dark/light) with local storage sync",
   "verifiedBenchmarks": {
     "apiLatency": "38.4ms P95",
     "computerVisionMap": "94.8% mAP@50",
