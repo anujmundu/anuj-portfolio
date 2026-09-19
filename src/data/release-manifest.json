@@ -1,11 +1,11 @@
 {
   "project": "Anuj Mundu — AI/ML Production Portfolio",
-  "version": "1.0.15",
+  "version": "1.0.16",
   "buildPhase": "Alpha",
-  "commitNumber": 15,
+  "commitNumber": 16,
   "totalCommits": 160,
-  "timestamp": "2026-09-19T17:15:05+05:30",
-  "message": "feat(layout): implement footer with system status and social links",
+  "timestamp": "2026-09-19T18:02:30+05:30",
+  "message": "feat(ui): add glowing effect container for card elements",
   "verifiedBenchmarks": {
     "apiLatency": "38.4ms P95",
     "computerVisionMap": "94.8% mAP@50",
