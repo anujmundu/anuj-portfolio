@@ -1,11 +1,11 @@
 {
   "project": "Anuj Mundu — AI/ML Production Portfolio",
-  "version": "1.0.27",
+  "version": "1.0.28",
   "buildPhase": "Alpha",
-  "commitNumber": 27,
+  "commitNumber": 28,
   "totalCommits": 160,
-  "timestamp": "2026-09-20T18:48:15+05:30",
-  "message": "feat(ui): implement SpotlightCard with mouse-tracking radial highlight",
+  "timestamp": "2026-09-20T19:35:40+05:30",
+  "message": "style(hero): polish typography hierarchy and glowing text shadows",
   "verifiedBenchmarks": {
     "apiLatency": "38.4ms P95",
     "computerVisionMap": "94.8% mAP@50",
