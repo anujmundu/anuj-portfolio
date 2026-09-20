@@ -1,11 +1,11 @@
 {
   "project": "Anuj Mundu — AI/ML Production Portfolio",
-  "version": "1.0.22",
+  "version": "1.0.23",
   "buildPhase": "Alpha",
-  "commitNumber": 22,
+  "commitNumber": 23,
   "totalCommits": 160,
-  "timestamp": "2026-09-20T14:58:35+05:30",
-  "message": "feat(data): structure CaseStudy and ProjectMetric data contracts",
+  "timestamp": "2026-09-20T15:42:10+05:30",
+  "message": "feat(data): populate skills taxonomy across 4 core engineering domains",
   "verifiedBenchmarks": {
     "apiLatency": "38.4ms P95",
     "computerVisionMap": "94.8% mAP@50",
