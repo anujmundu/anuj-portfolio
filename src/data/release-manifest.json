@@ -1,11 +1,11 @@
 {
   "project": "Anuj Mundu — AI/ML Production Portfolio",
-  "version": "1.0.21",
+  "version": "1.0.22",
   "buildPhase": "Alpha",
-  "commitNumber": 21,
+  "commitNumber": 22,
   "totalCommits": 160,
-  "timestamp": "2026-09-20T14:15:20+05:30",
-  "message": "feat(data): define TypeScript interfaces for projects and architecture nodes",
+  "timestamp": "2026-09-20T14:58:35+05:30",
+  "message": "feat(data): structure CaseStudy and ProjectMetric data contracts",
   "verifiedBenchmarks": {
     "apiLatency": "38.4ms P95",
     "computerVisionMap": "94.8% mAP@50",
