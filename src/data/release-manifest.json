@@ -1,11 +1,11 @@
 {
   "project": "Anuj Mundu — AI/ML Production Portfolio",
-  "version": "1.0.24",
+  "version": "1.0.25",
   "buildPhase": "Alpha",
-  "commitNumber": 24,
+  "commitNumber": 25,
   "totalCommits": 160,
-  "timestamp": "2026-09-20T16:28:45+05:30",
-  "message": "feat(hero): scaffold hero section with high-impact engineering statement",
+  "timestamp": "2026-09-20T17:15:05+05:30",
+  "message": "feat(hero): implement dynamic role badge with availability beacon",
   "verifiedBenchmarks": {
     "apiLatency": "38.4ms P95",
     "computerVisionMap": "94.8% mAP@50",
