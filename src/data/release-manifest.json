@@ -1,11 +1,11 @@
 {
   "project": "Anuj Mundu — AI/ML Production Portfolio",
-  "version": "1.0.25",
+  "version": "1.0.26",
   "buildPhase": "Alpha",
-  "commitNumber": 25,
+  "commitNumber": 26,
   "totalCommits": 160,
-  "timestamp": "2026-09-20T17:15:05+05:30",
-  "message": "feat(hero): implement dynamic role badge with availability beacon",
+  "timestamp": "2026-09-20T18:02:30+05:30",
+  "message": "feat(hero): add interactive terminal trigger in hero banner",
   "verifiedBenchmarks": {
     "apiLatency": "38.4ms P95",
     "computerVisionMap": "94.8% mAP@50",
