@@ -1,11 +1,11 @@
 {
   "project": "Anuj Mundu — AI/ML Production Portfolio",
-  "version": "1.0.37",
+  "version": "1.0.38",
   "buildPhase": "Alpha",
-  "commitNumber": 37,
+  "commitNumber": 38,
   "totalCommits": 160,
-  "timestamp": "2026-09-21T18:48:15+05:30",
-  "message": "feat(skills): add SHAP waterfall attribution simulation",
+  "timestamp": "2026-09-21T19:35:40+05:30",
+  "message": "feat(skills): add CBAM spatial vs channel attention mode toggle",
   "verifiedBenchmarks": {
     "apiLatency": "38.4ms P95",
     "computerVisionMap": "94.8% mAP@50",
