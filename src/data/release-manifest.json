@@ -1,11 +1,11 @@
 {
   "project": "Anuj Mundu — AI/ML Production Portfolio",
-  "version": "1.0.35",
+  "version": "1.0.36",
   "buildPhase": "Alpha",
-  "commitNumber": 35,
+  "commitNumber": 36,
   "totalCommits": 160,
-  "timestamp": "2026-09-21T17:15:05+05:30",
-  "message": "feat(skills): add interactive lifecycle stage selector for pipelines",
+  "timestamp": "2026-09-21T18:02:30+05:30",
+  "message": "feat(skills): add SQL query explain benchmark metrics",
   "verifiedBenchmarks": {
     "apiLatency": "38.4ms P95",
     "computerVisionMap": "94.8% mAP@50",
