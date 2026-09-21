@@ -1,11 +1,11 @@
 {
   "project": "Anuj Mundu — AI/ML Production Portfolio",
-  "version": "1.0.38",
+  "version": "1.0.39",
   "buildPhase": "Alpha",
-  "commitNumber": 38,
+  "commitNumber": 39,
   "totalCommits": 160,
-  "timestamp": "2026-09-21T19:35:40+05:30",
-  "message": "feat(skills): add CBAM spatial vs channel attention mode toggle",
+  "timestamp": "2026-09-21T20:22:15+05:30",
+  "message": "feat(skills): integrate FP16 vs INT8 precision benchmark slider",
   "verifiedBenchmarks": {
     "apiLatency": "38.4ms P95",
     "computerVisionMap": "94.8% mAP@50",
