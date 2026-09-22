@@ -1,11 +1,11 @@
 {
   "project": "Anuj Mundu — AI/ML Production Portfolio",
-  "version": "1.0.41",
+  "version": "1.0.42",
   "buildPhase": "Beta",
-  "commitNumber": 41,
+  "commitNumber": 42,
   "totalCommits": 160,
-  "timestamp": "2026-09-22T14:15:20+05:30",
-  "message": "feat(work): design SelectedWork section with responsive card grid",
+  "timestamp": "2026-09-22T14:58:35+05:30",
+  "message": "feat(work): implement category filters (AI/ML, Data Science, Analytics)",
   "verifiedBenchmarks": {
     "apiLatency": "38.4ms P95",
     "computerVisionMap": "94.8% mAP@50",
