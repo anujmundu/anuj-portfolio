@@ -1,11 +1,11 @@
 {
   "project": "Anuj Mundu — AI/ML Production Portfolio",
-  "version": "1.0.44",
+  "version": "1.0.45",
   "buildPhase": "Beta",
-  "commitNumber": 44,
+  "commitNumber": 45,
   "totalCommits": 160,
-  "timestamp": "2026-09-22T16:28:45+05:30",
-  "message": "feat(work): integrate LinkPreview popover for live project links",
+  "timestamp": "2026-09-22T17:15:05+05:30",
+  "message": "feat(work): implement dynamic case study routing (/work/[slug])",
   "verifiedBenchmarks": {
     "apiLatency": "38.4ms P95",
     "computerVisionMap": "94.8% mAP@50",
