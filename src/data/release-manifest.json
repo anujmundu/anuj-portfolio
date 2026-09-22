@@ -1,11 +1,11 @@
 {
   "project": "Anuj Mundu — AI/ML Production Portfolio",
-  "version": "1.0.46",
+  "version": "1.0.47",
   "buildPhase": "Beta",
-  "commitNumber": 46,
+  "commitNumber": 47,
   "totalCommits": 160,
-  "timestamp": "2026-09-22T18:02:30+05:30",
-  "message": "feat(case-study): scaffold comprehensive case study template layout",
+  "timestamp": "2026-09-22T18:48:15+05:30",
+  "message": "feat(case-study): add problem statement and architectural overview blocks",
   "verifiedBenchmarks": {
     "apiLatency": "38.4ms P95",
     "computerVisionMap": "94.8% mAP@50",
