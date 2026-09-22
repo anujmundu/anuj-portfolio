@@ -1,11 +1,11 @@
 {
   "project": "Anuj Mundu — AI/ML Production Portfolio",
-  "version": "1.0.42",
+  "version": "1.0.43",
   "buildPhase": "Beta",
-  "commitNumber": 42,
+  "commitNumber": 43,
   "totalCommits": 160,
-  "timestamp": "2026-09-22T14:58:35+05:30",
-  "message": "feat(work): implement category filters (AI/ML, Data Science, Analytics)",
+  "timestamp": "2026-09-22T15:42:10+05:30",
+  "message": "feat(work): add metric chips and production hardware badges to project cards",
   "verifiedBenchmarks": {
     "apiLatency": "38.4ms P95",
     "computerVisionMap": "94.8% mAP@50",
