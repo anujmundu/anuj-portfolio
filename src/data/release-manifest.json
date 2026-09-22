@@ -1,11 +1,11 @@
 {
   "project": "Anuj Mundu — AI/ML Production Portfolio",
-  "version": "1.0.48",
+  "version": "1.0.49",
   "buildPhase": "Beta",
-  "commitNumber": 48,
+  "commitNumber": 49,
   "totalCommits": 160,
-  "timestamp": "2026-09-22T19:35:40+05:30",
-  "message": "feat(case-study): render data pipeline specifications and preprocessing logs",
+  "timestamp": "2026-09-22T20:22:15+05:30",
+  "message": "feat(case-study): implement model engineering hyperparameters table",
   "verifiedBenchmarks": {
     "apiLatency": "38.4ms P95",
     "computerVisionMap": "94.8% mAP@50",
