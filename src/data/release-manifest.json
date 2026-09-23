@@ -1,11 +1,11 @@
 {
   "project": "Anuj Mundu — AI/ML Production Portfolio",
-  "version": "1.0.59",
+  "version": "1.0.60",
   "buildPhase": "Beta",
-  "commitNumber": 59,
+  "commitNumber": 60,
   "totalCommits": 160,
-  "timestamp": "2026-09-23T20:22:15+05:30",
-  "message": "style(case-study): enhance code syntax highlighting and terminal blocks",
+  "timestamp": "2026-09-23T21:30:50+05:30",
+  "message": "perf(case-study): enable static site generation (SSG) with generateStaticParams",
   "verifiedBenchmarks": {
     "apiLatency": "38.4ms P95",
     "computerVisionMap": "94.8% mAP@50",
