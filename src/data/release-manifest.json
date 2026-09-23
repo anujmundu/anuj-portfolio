@@ -1,11 +1,11 @@
 {
   "project": "Anuj Mundu — AI/ML Production Portfolio",
-  "version": "1.0.56",
+  "version": "1.0.57",
   "buildPhase": "Beta",
-  "commitNumber": 56,
+  "commitNumber": 57,
   "totalCommits": 160,
-  "timestamp": "2026-09-23T18:02:30+05:30",
-  "message": "feat(projects): document 94.8% mAP@50 oncology detection benchmarks",
+  "timestamp": "2026-09-23T18:48:15+05:30",
+  "message": "feat(projects): add Grad-CAM explainability heatmap documentation",
   "verifiedBenchmarks": {
     "apiLatency": "38.4ms P95",
     "computerVisionMap": "94.8% mAP@50",
