@@ -1,11 +1,11 @@
 {
   "project": "Anuj Mundu — AI/ML Production Portfolio",
-  "version": "1.0.58",
+  "version": "1.0.59",
   "buildPhase": "Beta",
-  "commitNumber": 58,
+  "commitNumber": 59,
   "totalCommits": 160,
-  "timestamp": "2026-09-23T19:35:40+05:30",
-  "message": "feat(projects): link YOLOv5-CASP live Streamlit clinical CADx app",
+  "timestamp": "2026-09-23T20:22:15+05:30",
+  "message": "style(case-study): enhance code syntax highlighting and terminal blocks",
   "verifiedBenchmarks": {
     "apiLatency": "38.4ms P95",
     "computerVisionMap": "94.8% mAP@50",
