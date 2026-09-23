@@ -1,11 +1,11 @@
 {
   "project": "Anuj Mundu — AI/ML Production Portfolio",
-  "version": "1.0.51",
+  "version": "1.0.52",
   "buildPhase": "Beta",
-  "commitNumber": 51,
+  "commitNumber": 52,
   "totalCommits": 160,
-  "timestamp": "2026-09-23T14:15:20+05:30",
-  "message": "feat(projects): architect OmniForge Multimodal AI Platform case study",
+  "timestamp": "2026-09-23T14:58:35+05:30",
+  "message": "feat(projects): add OmniForge Celery-Redis worker mesh architecture specs",
   "verifiedBenchmarks": {
     "apiLatency": "38.4ms P95",
     "computerVisionMap": "94.8% mAP@50",
