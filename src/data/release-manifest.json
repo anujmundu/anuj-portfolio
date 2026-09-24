@@ -1,11 +1,11 @@
 {
   "project": "Anuj Mundu — AI/ML Production Portfolio",
-  "version": "1.0.66",
+  "version": "1.0.67",
   "buildPhase": "Beta",
-  "commitNumber": 66,
+  "commitNumber": 67,
   "totalCommits": 160,
-  "timestamp": "2026-09-24T18:02:30+05:30",
-  "message": "feat(projects): document 98.2% clinical sensitivity benchmarks",
+  "timestamp": "2026-09-24T18:48:15+05:30",
+  "message": "feat(projects): link EndoGuard live Streamlit cloud diagnosis application",
   "verifiedBenchmarks": {
     "apiLatency": "38.4ms P95",
     "computerVisionMap": "94.8% mAP@50",
