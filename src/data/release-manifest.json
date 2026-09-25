@@ -1,11 +1,11 @@
 {
   "project": "Anuj Mundu — AI/ML Production Portfolio",
-  "version": "1.0.72",
+  "version": "1.0.73",
   "buildPhase": "Beta",
-  "commitNumber": 72,
+  "commitNumber": 73,
   "totalCommits": 160,
-  "timestamp": "2026-09-25T14:58:35+05:30",
-  "message": "feat(mindset): implement interactive cross-validation split comparison",
+  "timestamp": "2026-09-25T15:42:10+05:30",
+  "message": "feat(mindset): add leak detection visualization comparing random vs purged split",
   "verifiedBenchmarks": {
     "apiLatency": "38.4ms P95",
     "computerVisionMap": "94.8% mAP@50",
