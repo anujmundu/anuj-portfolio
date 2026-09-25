@@ -1,11 +1,11 @@
 {
   "project": "Anuj Mundu — AI/ML Production Portfolio",
-  "version": "1.0.75",
+  "version": "1.0.76",
   "buildPhase": "Beta",
-  "commitNumber": 75,
+  "commitNumber": 76,
   "totalCommits": 160,
-  "timestamp": "2026-09-25T17:15:05+05:30",
-  "message": "feat(mindset): calculate dynamic Precision, Recall, and F1 scores in real-time",
+  "timestamp": "2026-09-25T18:02:30+05:30",
+  "message": "feat(mindset): add business scrap cost impact calculator on threshold change",
   "verifiedBenchmarks": {
     "apiLatency": "38.4ms P95",
     "computerVisionMap": "94.8% mAP@50",
