@@ -1,11 +1,11 @@
 {
   "project": "Anuj Mundu — AI/ML Production Portfolio",
-  "version": "1.0.87",
+  "version": "1.0.88",
   "buildPhase": "Beta",
-  "commitNumber": 87,
+  "commitNumber": 88,
   "totalCommits": 160,
-  "timestamp": "2026-09-26T18:48:15+05:30",
-  "message": "feat(lab): build interactive feature importances radar chart",
+  "timestamp": "2026-09-26T19:35:40+05:30",
+  "message": "style(lab): add ambient cybernetic glow and scanline overlays",
   "verifiedBenchmarks": {
     "apiLatency": "38.4ms P95",
     "computerVisionMap": "94.8% mAP@50",
