@@ -1,11 +1,11 @@
 {
   "project": "Anuj Mundu — AI/ML Production Portfolio",
-  "version": "1.0.86",
+  "version": "1.0.87",
   "buildPhase": "Beta",
-  "commitNumber": 86,
+  "commitNumber": 87,
   "totalCommits": 160,
-  "timestamp": "2026-09-26T18:02:30+05:30",
-  "message": "feat(lab): add real-time telemetry readout for tensor operations",
+  "timestamp": "2026-09-26T18:48:15+05:30",
+  "message": "feat(lab): build interactive feature importances radar chart",
   "verifiedBenchmarks": {
     "apiLatency": "38.4ms P95",
     "computerVisionMap": "94.8% mAP@50",
