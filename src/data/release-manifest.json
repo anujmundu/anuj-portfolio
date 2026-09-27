@@ -1,11 +1,11 @@
 {
   "project": "Anuj Mundu — AI/ML Production Portfolio",
-  "version": "1.0.97",
+  "version": "1.0.98",
   "buildPhase": "Beta",
-  "commitNumber": 97,
+  "commitNumber": 98,
   "totalCommits": 160,
-  "timestamp": "2026-09-27T18:48:15+05:30",
-  "message": "feat(ui): implement node selector strip for direct focus locking",
+  "timestamp": "2026-09-27T19:35:40+05:30",
+  "message": "feat(ui): add node inspection telemetry HUD displaying memory and payload",
   "verifiedBenchmarks": {
     "apiLatency": "38.4ms P95",
     "computerVisionMap": "94.8% mAP@50",
