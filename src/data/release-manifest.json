@@ -1,11 +1,11 @@
 {
   "project": "Anuj Mundu — AI/ML Production Portfolio",
-  "version": "1.0.93",
+  "version": "1.0.94",
   "buildPhase": "Beta",
-  "commitNumber": 93,
+  "commitNumber": 94,
   "totalCommits": 160,
-  "timestamp": "2026-09-27T15:42:10+05:30",
-  "message": "feat(ui): calculate tight orbital geometry centered at (50%, 43%)",
+  "timestamp": "2026-09-27T16:28:45+05:30",
+  "message": "feat(ui): render dynamic SVG synaptic laser conduits connecting Core to nodes",
   "verifiedBenchmarks": {
     "apiLatency": "38.4ms P95",
     "computerVisionMap": "94.8% mAP@50",
