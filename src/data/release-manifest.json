@@ -1,11 +1,11 @@
 {
   "project": "Anuj Mundu — AI/ML Production Portfolio",
-  "version": "1.0.95",
+  "version": "1.0.96",
   "buildPhase": "Beta",
-  "commitNumber": 95,
+  "commitNumber": 96,
   "totalCommits": 160,
-  "timestamp": "2026-09-27T17:15:05+05:30",
-  "message": "feat(ui): implement traveling laser pulse animations along synaptic rays",
+  "timestamp": "2026-09-27T18:02:30+05:30",
+  "message": "feat(ui): add concentric gyro-rings with dual-speed rotational spin",
   "verifiedBenchmarks": {
     "apiLatency": "38.4ms P95",
     "computerVisionMap": "94.8% mAP@50",
