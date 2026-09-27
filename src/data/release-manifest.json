@@ -1,11 +1,11 @@
 {
   "project": "Anuj Mundu — AI/ML Production Portfolio",
-  "version": "1.0.96",
+  "version": "1.0.97",
   "buildPhase": "Beta",
-  "commitNumber": 96,
+  "commitNumber": 97,
   "totalCommits": 160,
-  "timestamp": "2026-09-27T18:02:30+05:30",
-  "message": "feat(ui): add concentric gyro-rings with dual-speed rotational spin",
+  "timestamp": "2026-09-27T18:48:15+05:30",
+  "message": "feat(ui): implement node selector strip for direct focus locking",
   "verifiedBenchmarks": {
     "apiLatency": "38.4ms P95",
     "computerVisionMap": "94.8% mAP@50",
