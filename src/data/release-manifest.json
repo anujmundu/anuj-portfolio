@@ -1,11 +1,11 @@
 {
   "project": "Anuj Mundu — AI/ML Production Portfolio",
-  "version": "1.0.98",
+  "version": "1.0.99",
   "buildPhase": "Beta",
-  "commitNumber": 98,
+  "commitNumber": 99,
   "totalCommits": 160,
-  "timestamp": "2026-09-27T19:35:40+05:30",
-  "message": "feat(ui): add node inspection telemetry HUD displaying memory and payload",
+  "timestamp": "2026-09-27T20:22:15+05:30",
+  "message": "feat(ui): simulate live P95 jitter telemetry ticker in swarm terminal",
   "verifiedBenchmarks": {
     "apiLatency": "38.4ms P95",
     "computerVisionMap": "94.8% mAP@50",
