@@ -1,11 +1,11 @@
 {
   "project": "Anuj Mundu — AI/ML Production Portfolio",
-  "version": "1.0.99",
+  "version": "1.0.100",
   "buildPhase": "Beta",
-  "commitNumber": 99,
+  "commitNumber": 100,
   "totalCommits": 160,
-  "timestamp": "2026-09-27T20:22:15+05:30",
-  "message": "feat(ui): simulate live P95 jitter telemetry ticker in swarm terminal",
+  "timestamp": "2026-09-27T21:30:50+05:30",
+  "message": "style(ui): apply Aceternity glassmorphism styling and cyan neon accents",
   "verifiedBenchmarks": {
     "apiLatency": "38.4ms P95",
     "computerVisionMap": "94.8% mAP@50",
