@@ -1,11 +1,11 @@
 {
   "project": "Anuj Mundu — AI/ML Production Portfolio",
-  "version": "1.0.105",
+  "version": "1.0.106",
   "buildPhase": "Beta",
-  "commitNumber": 105,
+  "commitNumber": 106,
   "totalCommits": 160,
-  "timestamp": "2026-09-28T17:15:05+05:30",
-  "message": "feat(swarm): implement Mode 3 - Context RAG vector embedding space",
+  "timestamp": "2026-09-28T18:02:30+05:30",
+  "message": "feat(swarm): add radar vector sweep and 1536-dim cluster embeddings",
   "verifiedBenchmarks": {
     "apiLatency": "38.4ms P95",
     "computerVisionMap": "94.8% mAP@50",
