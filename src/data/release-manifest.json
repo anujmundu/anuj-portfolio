@@ -1,11 +1,11 @@
 {
   "project": "Anuj Mundu — AI/ML Production Portfolio",
-  "version": "1.0.112",
+  "version": "1.0.113",
   "buildPhase": "Beta",
-  "commitNumber": 112,
+  "commitNumber": 113,
   "totalCommits": 160,
-  "timestamp": "2026-09-29T14:58:35+05:30",
-  "message": "feat(swarm): synthesize ascending harmonic audio blast on swarm burst",
+  "timestamp": "2026-09-29T15:42:10+05:30",
+  "message": "feat(swarm): add central expanding shockwave pulse animation",
   "verifiedBenchmarks": {
     "apiLatency": "38.4ms P95",
     "computerVisionMap": "94.8% mAP@50",
