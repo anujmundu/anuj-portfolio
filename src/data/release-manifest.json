@@ -1,11 +1,11 @@
 {
   "project": "Anuj Mundu — AI/ML Production Portfolio",
-  "version": "1.0.115",
+  "version": "1.0.116",
   "buildPhase": "Beta",
-  "commitNumber": 115,
+  "commitNumber": 116,
   "totalCommits": 160,
-  "timestamp": "2026-09-29T17:15:05+05:30",
-  "message": "feat(swarm): implement Framer Motion drag with dragSnapToOrigin physics",
+  "timestamp": "2026-09-29T18:02:30+05:30",
+  "message": "feat(swarm): calibrate outward radial burst vectors for all 5 satellite nodes",
   "verifiedBenchmarks": {
     "apiLatency": "38.4ms P95",
     "computerVisionMap": "94.8% mAP@50",
