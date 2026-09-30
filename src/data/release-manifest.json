@@ -1,11 +1,11 @@
 {
   "project": "Anuj Mundu — AI/ML Production Portfolio",
-  "version": "1.0.120",
+  "version": "1.0.121",
   "buildPhase": "Release Candidate",
-  "commitNumber": 120,
+  "commitNumber": 121,
   "totalCommits": 160,
-  "timestamp": "2026-09-29T21:30:50+05:30",
-  "message": "test: verify browser drag snap-back and burst return across all viewports",
+  "timestamp": "2026-09-30T14:15:20+05:30",
+  "message": "feat(about): scaffold interactive About & Career narrative page (/about)",
   "verifiedBenchmarks": {
     "apiLatency": "38.4ms P95",
     "computerVisionMap": "94.8% mAP@50",
