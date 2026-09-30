@@ -1,11 +1,11 @@
 {
   "project": "Anuj Mundu — AI/ML Production Portfolio",
-  "version": "1.0.125",
+  "version": "1.0.126",
   "buildPhase": "Release Candidate",
-  "commitNumber": 125,
+  "commitNumber": 126,
   "totalCommits": 160,
-  "timestamp": "2026-09-30T17:15:05+05:30",
-  "message": "feat(resume): build comprehensive ATS-friendly resume page (/resume)",
+  "timestamp": "2026-09-30T18:02:30+05:30",
+  "message": "feat(resume): add print stylesheet optimizing 1-page PDF export",
   "verifiedBenchmarks": {
     "apiLatency": "38.4ms P95",
     "computerVisionMap": "94.8% mAP@50",
