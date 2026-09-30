@@ -1,11 +1,11 @@
 {
   "project": "Anuj Mundu — AI/ML Production Portfolio",
-  "version": "1.0.122",
+  "version": "1.0.123",
   "buildPhase": "Release Candidate",
-  "commitNumber": 122,
+  "commitNumber": 123,
   "totalCommits": 160,
-  "timestamp": "2026-09-30T14:58:35+05:30",
-  "message": "feat(about): build interactive career timeline with milestone nodes",
+  "timestamp": "2026-09-30T15:42:10+05:30",
+  "message": "feat(about): add core technical principles and problem-solving manifesto",
   "verifiedBenchmarks": {
     "apiLatency": "38.4ms P95",
     "computerVisionMap": "94.8% mAP@50",
