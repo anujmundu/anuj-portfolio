@@ -1,11 +1,11 @@
 {
   "project": "Anuj Mundu — AI/ML Production Portfolio",
-  "version": "1.0.129",
+  "version": "1.0.130",
   "buildPhase": "Release Candidate",
-  "commitNumber": 129,
+  "commitNumber": 130,
   "totalCommits": 160,
-  "timestamp": "2026-09-30T20:22:15+05:30",
-  "message": "style(about): apply cybernetic HUD corners and monospace headings",
+  "timestamp": "2026-09-30T21:30:50+05:30",
+  "message": "perf(resume): optimize semantic HTML hierarchy for search engine crawlers",
   "verifiedBenchmarks": {
     "apiLatency": "38.4ms P95",
     "computerVisionMap": "94.8% mAP@50",
