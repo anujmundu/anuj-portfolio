@@ -1,11 +1,11 @@
 {
   "project": "Anuj Mundu — AI/ML Production Portfolio",
-  "version": "1.0.132",
+  "version": "1.0.133",
   "buildPhase": "Release Candidate",
-  "commitNumber": 132,
+  "commitNumber": 133,
   "totalCommits": 160,
-  "timestamp": "2026-10-01T14:58:35+05:30",
-  "message": "feat(recruiter): implement real-time 30.0s speedrun countdown timer",
+  "timestamp": "2026-10-01T15:42:10+05:30",
+  "message": "feat(recruiter): add interactive timer controls (pause, resume, reset)",
   "verifiedBenchmarks": {
     "apiLatency": "38.4ms P95",
     "computerVisionMap": "94.8% mAP@50",
