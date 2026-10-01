@@ -1,11 +1,11 @@
 {
   "project": "Anuj Mundu — AI/ML Production Portfolio",
-  "version": "1.0.139",
+  "version": "1.0.140",
   "buildPhase": "Release Candidate",
-  "commitNumber": 139,
+  "commitNumber": 140,
   "totalCommits": 160,
-  "timestamp": "2026-10-01T20:22:15+05:30",
-  "message": "feat(recruiter): calculate dynamic match percentages (97.6% - 99.4%)",
+  "timestamp": "2026-10-01T21:30:50+05:30",
+  "message": "feat(recruiter): list verified flagship production apps with LIVE status tags",
   "verifiedBenchmarks": {
     "apiLatency": "38.4ms P95",
     "computerVisionMap": "94.8% mAP@50",
