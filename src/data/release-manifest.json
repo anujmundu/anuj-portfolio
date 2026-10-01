@@ -1,11 +1,11 @@
 {
   "project": "Anuj Mundu — AI/ML Production Portfolio",
-  "version": "1.0.130",
+  "version": "1.0.131",
   "buildPhase": "Release Candidate",
-  "commitNumber": 130,
+  "commitNumber": 131,
   "totalCommits": 160,
-  "timestamp": "2026-09-30T21:30:50+05:30",
-  "message": "perf(resume): optimize semantic HTML hierarchy for search engine crawlers",
+  "timestamp": "2026-10-01T14:15:20+05:30",
+  "message": "feat(recruiter): architect Recruiter 30-Second Executive Brief drawer",
   "verifiedBenchmarks": {
     "apiLatency": "38.4ms P95",
     "computerVisionMap": "94.8% mAP@50",
