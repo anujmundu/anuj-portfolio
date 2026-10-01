@@ -1,11 +1,11 @@
 {
   "project": "Anuj Mundu — AI/ML Production Portfolio",
-  "version": "1.0.136",
+  "version": "1.0.137",
   "buildPhase": "Release Candidate",
-  "commitNumber": 136,
+  "commitNumber": 137,
   "totalCommits": 160,
-  "timestamp": "2026-10-01T18:02:30+05:30",
-  "message": "feat(recruiter): implement Lens 01 - Tech Lead & Architect low-latency view",
+  "timestamp": "2026-10-01T18:48:15+05:30",
+  "message": "feat(recruiter): implement Lens 01 - Director & VP of Engineering ROI view",
   "verifiedBenchmarks": {
     "apiLatency": "38.4ms P95",
     "computerVisionMap": "94.8% mAP@50",
