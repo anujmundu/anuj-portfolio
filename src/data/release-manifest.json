@@ -1,11 +1,11 @@
 {
   "project": "Anuj Mundu — AI/ML Production Portfolio",
-  "version": "1.0.149",
+  "version": "1.0.150",
   "buildPhase": "Release Candidate",
-  "commitNumber": 149,
+  "commitNumber": 150,
   "totalCommits": 160,
-  "timestamp": "2026-10-02T20:22:15+05:30",
-  "message": "feat(seo): configure robots.txt and dynamic sitemap.xml generators",
+  "timestamp": "2026-10-02T21:30:50+05:30",
+  "message": "feat(seo): implement OpenGraph and Twitter card metadata for social previews",
   "verifiedBenchmarks": {
     "apiLatency": "38.4ms P95",
     "computerVisionMap": "94.8% mAP@50",
