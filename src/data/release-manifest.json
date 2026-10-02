@@ -1,11 +1,11 @@
 {
   "project": "Anuj Mundu — AI/ML Production Portfolio",
-  "version": "1.0.148",
+  "version": "1.0.149",
   "buildPhase": "Release Candidate",
-  "commitNumber": 148,
+  "commitNumber": 149,
   "totalCommits": 160,
-  "timestamp": "2026-10-02T19:35:40+05:30",
-  "message": "perf(recruiter): optimize AnimatePresence spring transitions for mobile",
+  "timestamp": "2026-10-02T20:22:15+05:30",
+  "message": "feat(seo): configure robots.txt and dynamic sitemap.xml generators",
   "verifiedBenchmarks": {
     "apiLatency": "38.4ms P95",
     "computerVisionMap": "94.8% mAP@50",
