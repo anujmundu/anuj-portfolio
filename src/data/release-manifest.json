@@ -1,11 +1,11 @@
 {
   "project": "Anuj Mundu — AI/ML Production Portfolio",
-  "version": "1.0.140",
+  "version": "1.0.141",
   "buildPhase": "Release Candidate",
-  "commitNumber": 140,
+  "commitNumber": 141,
   "totalCommits": 160,
-  "timestamp": "2026-10-01T21:30:50+05:30",
-  "message": "feat(recruiter): list verified flagship production apps with LIVE status tags",
+  "timestamp": "2026-10-02T14:15:20+05:30",
+  "message": "feat(recruiter): implement 1-click ATS / Slack hiring manager pitch generator",
   "verifiedBenchmarks": {
     "apiLatency": "38.4ms P95",
     "computerVisionMap": "94.8% mAP@50",
