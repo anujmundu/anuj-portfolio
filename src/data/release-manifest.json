@@ -1,11 +1,11 @@
 {
   "project": "Anuj Mundu — AI/ML Production Portfolio",
-  "version": "1.0.146",
+  "version": "1.0.147",
   "buildPhase": "Release Candidate",
-  "commitNumber": 146,
+  "commitNumber": 147,
   "totalCommits": 160,
-  "timestamp": "2026-10-02T18:02:30+05:30",
-  "message": "feat(recruiter): link interactive resume and social channels in action dock",
+  "timestamp": "2026-10-02T18:48:15+05:30",
+  "message": "style(recruiter): apply obsidian glassmorphism and cyan holographic glow",
   "verifiedBenchmarks": {
     "apiLatency": "38.4ms P95",
     "computerVisionMap": "94.8% mAP@50",
