@@ -1,11 +1,11 @@
 {
   "project": "Anuj Mundu — AI/ML Production Portfolio",
-  "version": "1.0.151",
+  "version": "1.0.152",
   "buildPhase": "Release Candidate",
-  "commitNumber": 151,
+  "commitNumber": 152,
   "totalCommits": 160,
-  "timestamp": "2026-10-03T14:15:20+05:30",
-  "message": "feat(seo): add JSON-LD structured schema for Person and SoftwareApplication",
+  "timestamp": "2026-10-03T14:58:35+05:30",
+  "message": "chore: upgrade .gitignore with comprehensive OS, IDE, and Next.js rules",
   "verifiedBenchmarks": {
     "apiLatency": "38.4ms P95",
     "computerVisionMap": "94.8% mAP@50",
