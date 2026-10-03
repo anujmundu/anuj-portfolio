@@ -1,11 +1,11 @@
 {
   "project": "Anuj Mundu — AI/ML Production Portfolio",
-  "version": "1.0.159",
+  "version": "1.0.160",
   "buildPhase": "Release Candidate",
-  "commitNumber": 159,
+  "commitNumber": 160,
   "totalCommits": 160,
-  "timestamp": "2026-10-03T20:22:15+05:30",
-  "message": "chore: set default production branch to main",
+  "timestamp": "2026-10-03T21:30:50+05:30",
+  "message": "feat: finalize production release v1.0.0 of Anuj Mundu AI/ML portfolio",
   "verifiedBenchmarks": {
     "apiLatency": "38.4ms P95",
     "computerVisionMap": "94.8% mAP@50",
