@@ -1,11 +1,11 @@
 {
   "project": "Anuj Mundu — AI/ML Production Portfolio",
-  "version": "1.0.150",
+  "version": "1.0.151",
   "buildPhase": "Release Candidate",
-  "commitNumber": 150,
+  "commitNumber": 151,
   "totalCommits": 160,
-  "timestamp": "2026-10-02T21:30:50+05:30",
-  "message": "feat(seo): implement OpenGraph and Twitter card metadata for social previews",
+  "timestamp": "2026-10-03T14:15:20+05:30",
+  "message": "feat(seo): add JSON-LD structured schema for Person and SoftwareApplication",
   "verifiedBenchmarks": {
     "apiLatency": "38.4ms P95",
     "computerVisionMap": "94.8% mAP@50",
