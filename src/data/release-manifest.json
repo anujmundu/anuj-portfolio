@@ -1,11 +1,11 @@
 {
   "project": "Anuj Mundu — AI/ML Production Portfolio",
-  "version": "1.0.153",
+  "version": "1.0.154",
   "buildPhase": "Release Candidate",
-  "commitNumber": 153,
+  "commitNumber": 154,
   "totalCommits": 160,
-  "timestamp": "2026-10-03T15:42:10+05:30",
-  "message": "docs: overhaul README.md with executive badges, live deployments and quickstart",
+  "timestamp": "2026-10-03T16:28:45+05:30",
+  "message": "docs: add detailed architecture diagrams and Three Pillars breakdown to README",
   "verifiedBenchmarks": {
     "apiLatency": "38.4ms P95",
     "computerVisionMap": "94.8% mAP@50",
