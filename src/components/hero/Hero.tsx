@@ -160,11 +160,11 @@ export function Hero() {
           </motion.h1>
 
           {/* Smooth Dynamic Typewriter Sub-header */}
-          <div className="pt-2">
+          <div className="pt-2 max-w-full overflow-hidden">
             <TypewriterEffectSmooth
               cyclePhrases={heroCyclePhrases}
-              className="my-1 font-mono items-center"
-              textClassName="text-sm sm:text-base md:text-xl lg:text-2xl font-mono tracking-wide"
+              className="my-1 font-mono items-center max-w-full"
+              textClassName="text-xs sm:text-base md:text-xl lg:text-2xl font-mono tracking-tight sm:tracking-wide truncate"
               cursorClassName="bg-cyan-400 shadow-[0_0_10px_#00e5ff]"
               typeDuration={1.8}
               pauseDuration={2400}
@@ -250,11 +250,11 @@ export function Hero() {
       </div>
 
       {/* Bottom Status & Scroll Indicator */}
-      <div className="relative z-10 max-w-7xl mx-auto w-full flex items-end justify-between border-t border-white/[0.06] pt-5 text-xs font-mono text-zinc-500">
-        <div className="flex items-center gap-6">
+      <div className="relative z-10 max-w-7xl mx-auto w-full flex flex-wrap items-center justify-between border-t border-white/[0.06] pt-5 text-xs font-mono text-zinc-500 gap-3">
+        <div className="flex flex-wrap items-center gap-3 sm:gap-6">
           <div className="flex items-center gap-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-ping" />
-            <span className="text-zinc-400">FASTAPI · DISTRIBUTED QUEUES · YOLOv5-CASP · MLOps</span>
+            <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-ping shrink-0" />
+            <span className="text-zinc-400 text-[10px] sm:text-xs">FASTAPI · DISTRIBUTED QUEUES · YOLOv5-CASP · MLOps</span>
           </div>
           <div className="hidden md:block text-zinc-600">
             [SCROLL TO INSPECT CASE STUDIES]
@@ -263,7 +263,7 @@ export function Hero() {
 
         <Link
           href="#capabilities"
-          className="flex items-center gap-2 text-zinc-400 hover:text-cyan-400 transition-colors"
+          className="flex items-center gap-2 text-zinc-400 hover:text-cyan-400 transition-colors shrink-0"
           data-cursor="button"
         >
           <span className="hidden sm:inline-block">PROCEED</span>

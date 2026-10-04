@@ -423,7 +423,7 @@ export function Cards() {
   const middle = (SPECIALIZATION_CARDS.length - 1) / 2;
 
   return (
-    <div className="relative w-full py-4 sm:py-8 space-y-8 font-mono select-none">
+    <div className="relative w-full max-w-full overflow-hidden py-4 sm:py-8 space-y-8 font-mono select-none">
       {/* Top Domain Quick-Selector Pills */}
       <div className="flex items-center justify-center gap-1.5 sm:gap-2 flex-wrap">
         {SPECIALIZATION_CARDS.map((card, idx) => {
@@ -447,10 +447,10 @@ export function Cards() {
         })}
       </div>
 
-      {/* Spring Physics Interactive Fan Deck Stage */}
+      {/* Desktop View: Spring Physics Interactive Fan Deck Stage (lg and above) */}
       <div
         ref={containerRef}
-        className="relative mx-auto flex h-[480px] sm:h-[530px] w-full max-w-5xl items-center justify-center overflow-visible [--card-w:260px] [--card-h:390px] sm:[--card-w:300px] sm:[--card-h:430px]"
+        className="hidden lg:flex relative mx-auto h-[530px] w-full max-w-5xl items-center justify-center overflow-hidden [--card-w:300px] [--card-h:430px]"
       >
         {SPECIALIZATION_CARDS.map((card, index) => {
           const offsetX = (index - middle) * spacing;
@@ -488,7 +488,7 @@ export function Cards() {
               }}
               onClick={() => selectCard(card)}
               className={cn(
-                "absolute top-1/2 left-1/2 rounded-2xl p-5 sm:p-6 cursor-pointer border backdrop-blur-2xl shadow-2xl flex flex-col justify-between overflow-hidden group transition-colors duration-300",
+                "absolute top-1/2 left-1/2 rounded-2xl p-6 cursor-pointer border backdrop-blur-2xl shadow-2xl flex flex-col justify-between overflow-hidden group transition-colors duration-300",
                 `bg-gradient-to-br ${card.bgGradient}`,
                 card.borderClass,
                 isActive ? card.glowClass : "shadow-black/60"
@@ -516,7 +516,7 @@ export function Cards() {
                     <Icon className="w-5 h-5" />
                   </div>
                   <div>
-                    <h3 className="font-extrabold text-base sm:text-lg text-white tracking-tight leading-snug">
+                    <h3 className="font-extrabold text-lg text-white tracking-tight leading-snug">
                       {card.title}
                     </h3>
                     <p className="text-[11px] text-zinc-400 font-sans leading-tight">
@@ -531,7 +531,7 @@ export function Cards() {
                 {card.metrics.map((m, i) => (
                   <div key={i} className="text-center">
                     <div className="text-[9px] text-zinc-500 uppercase truncate">{m.label.split(" ")[0]}</div>
-                    <div className="text-xs sm:text-sm font-extrabold text-white font-mono mt-0.5">
+                    <div className="text-sm font-extrabold text-white font-mono mt-0.5">
                       {m.value}
                     </div>
                   </div>
@@ -564,6 +564,106 @@ export function Cards() {
             </motion.div>
           );
         })}
+      </div>
+
+      {/* Mobile & Tablet Responsive Snap Track (Under lg) */}
+      <div className="lg:hidden w-full space-y-4">
+        <div className="flex items-center justify-between px-2 text-xs text-zinc-400">
+          <span className="flex items-center gap-1.5">
+            <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
+            <span className="font-bold">SWIPE OR TAP CARDS TO INSPECT</span>
+          </span>
+          <span className="text-cyan-400 font-mono text-[11px]">
+            {SPECIALIZATION_CARDS.length} SPECIALIZATIONS
+          </span>
+        </div>
+
+        <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory py-3 px-2 -mx-2 scrollbar-none [scrollbar-width:none] [-ms-overflow-style:none]">
+          {SPECIALIZATION_CARDS.map((card) => {
+            const isActive = activeCard?.id === card.id;
+            const Icon = card.icon;
+
+            return (
+              <div
+                key={`mobile-${card.id}`}
+                onClick={() => selectCard(card)}
+                className={cn(
+                  "snap-center shrink-0 w-[285px] sm:w-[320px] rounded-2xl p-5 cursor-pointer border backdrop-blur-2xl shadow-xl flex flex-col justify-between min-h-[400px] transition-all duration-300 relative overflow-hidden",
+                  `bg-gradient-to-br ${card.bgGradient}`,
+                  card.borderClass,
+                  isActive ? `${card.glowClass} ring-2 ring-cyan-400` : "opacity-90"
+                )}
+              >
+                {/* Corner HUD brackets */}
+                <div className="absolute top-2 left-2 w-3 h-3 border-t-2 border-l-2 border-white/40 pointer-events-none" />
+                <div className="absolute top-2 right-2 w-3 h-3 border-t-2 border-r-2 border-white/40 pointer-events-none" />
+                <div className="absolute bottom-2 left-2 w-3 h-3 border-b-2 border-l-2 border-white/40 pointer-events-none" />
+                <div className="absolute bottom-2 right-2 w-3 h-3 border-b-2 border-r-2 border-white/40 pointer-events-none" />
+
+                <div className="space-y-3 relative z-10">
+                  <div className="flex items-center justify-between">
+                    <span className="text-[10px] font-mono tracking-widest text-zinc-400 font-bold uppercase">
+                      {card.domainNumber}
+                    </span>
+                    <span className="px-2 py-0.5 rounded text-[9px] font-bold tracking-wider uppercase border border-white/10 bg-black/40 text-cyan-300">
+                      {card.badge}
+                    </span>
+                  </div>
+
+                  <div className="flex items-center gap-2.5 pt-1">
+                    <div className="p-2 rounded-xl bg-white/[0.05] border border-white/10 text-cyan-400">
+                      <Icon className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <h3 className="font-extrabold text-base text-white tracking-tight leading-snug">
+                        {card.title}
+                      </h3>
+                      <p className="text-[11px] text-zinc-400 font-sans leading-tight">
+                        {card.tagline}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Card Mini Telemetry Gauges */}
+                <div className="grid grid-cols-3 gap-1.5 py-3 border-y border-white/[0.08] bg-black/30 rounded-xl px-2.5 relative z-10 my-3">
+                  {card.metrics.map((m, i) => (
+                    <div key={i} className="text-center">
+                      <div className="text-[9px] text-zinc-500 uppercase truncate">{m.label.split(" ")[0]}</div>
+                      <div className="text-xs font-extrabold text-white font-mono mt-0.5">
+                        {m.value}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Competencies Preview / CTA */}
+                <div className="space-y-2 relative z-10">
+                  <div className="text-[10px] text-zinc-400 uppercase tracking-wider flex items-center justify-between">
+                    <span>5 Competencies:</span>
+                    <span className="text-cyan-400 font-bold">
+                      {isActive ? "ACTIVE" : "TAP TO OPEN"}
+                    </span>
+                  </div>
+
+                  <div className="flex flex-wrap gap-1">
+                    {card.competencies.slice(0, 3).map((comp, ci) => (
+                      <span
+                        key={ci}
+                        className="px-1.5 py-0.5 rounded text-[10px] bg-white/[0.04] border border-white/[0.06] text-zinc-300 truncate max-w-[120px]"
+                      >
+                        {comp.name.split(" ")[0]}
+                      </span>
+                    ))}
+                    <span className="px-1.5 py-0.5 rounded text-[10px] bg-cyan-950/40 text-cyan-300 border border-cyan-500/20 font-bold">
+                      +2 MORE
+                    </span>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
       </div>
 
       {/* Active Card Expanded Deep Competency Inspector Modal / Drawer */}

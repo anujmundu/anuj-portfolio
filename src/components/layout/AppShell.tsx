@@ -13,6 +13,7 @@ import { Notch } from "@/components/aceternity/Notch";
 import { ShaderCanvas } from "@/components/ui/ShaderCanvas";
 import { PageTransition } from "@/components/layout/PageTransition";
 import { ScrollProgressLaser } from "@/components/ui/ScrollProgressLaser";
+import { DeviceSimulator } from "@/components/ui/DeviceSimulator";
 
 interface AppShellProps {
   children: React.ReactNode;
@@ -52,6 +53,7 @@ export function AppShell({ children }: AppShellProps) {
         isOpen={recruiterOpen}
         onClose={() => setRecruiterOpen(false)}
       />
+      <DeviceSimulator />
     </>
   );
 }

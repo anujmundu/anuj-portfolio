@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "motion/react";
-import { Terminal, Menu, X, FileText, Sun, Moon, ArrowUpRight, Zap, Volume2, VolumeX } from "lucide-react";
+import { Terminal, Menu, X, FileText, Sun, Moon, ArrowUpRight, Zap, Volume2, VolumeX, Smartphone } from "lucide-react";
 import { toggleSound, isSoundEnabled, setSoundEnabled, playClick } from "@/lib/audio";
 
 interface NavbarProps {
@@ -127,6 +127,22 @@ export function Navbar({ onOpenTerminal, onOpenRecruiter }: NavbarProps) {
             </button>
           )}
 
+          {/* Responsive Device Simulator Trigger */}
+          <button
+            onClick={() => {
+              playClick();
+              if (typeof window !== "undefined") {
+                window.dispatchEvent(new CustomEvent("open-device-simulator"));
+              }
+            }}
+            className="flex items-center gap-1.5 px-2.5 py-1 rounded border border-cyan-500/30 bg-cyan-500/10 text-cyan-300 hover:bg-cyan-400 hover:text-black font-mono text-[11px] font-bold tracking-wider transition-all cursor-pointer shadow-[0_0_10px_rgba(0,229,255,0.15)] whitespace-nowrap"
+            title="Open Interactive Responsive Design Simulator (Alt+D or Ctrl+Shift+M)"
+            data-cursor="button"
+          >
+            <Smartphone className="w-3.5 h-3.5" />
+            <span className="hidden xl:inline">SIMULATOR</span>
+          </button>
+
           {/* Audio Synthesizer Toggle */}
           <button
             onClick={() => setSoundActive(toggleSound())}
@@ -233,6 +249,20 @@ export function Navbar({ onOpenTerminal, onOpenRecruiter }: NavbarProps) {
                   <span>RECRUITER 30s BRIEF</span>
                 </button>
               )}
+
+              <button
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  playClick();
+                  if (typeof window !== "undefined") {
+                    window.dispatchEvent(new CustomEvent("open-device-simulator"));
+                  }
+                }}
+                className="flex items-center justify-center gap-2 py-2 px-3 rounded bg-cyan-500/20 text-cyan-300 border border-cyan-400/50 font-bold text-xs shadow-[0_0_12px_rgba(0,229,255,0.2)] cursor-pointer"
+              >
+                <Smartphone className="w-3.5 h-3.5" />
+                <span>RESPONSIVE DEVICE SIMULATOR</span>
+              </button>
               <div className="pt-4 flex items-center justify-between border-t border-zinc-800/60">
                 <Link
                   href="/resume"

@@ -392,10 +392,10 @@ export function ArchitectureDiagram() {
           </div>
 
           {/* Real-time Performance Indicators */}
-          <div className="flex flex-wrap items-center gap-4 text-xs">
+          <div className="flex flex-wrap items-center gap-2 sm:gap-4 text-xs w-full lg:w-auto">
             <div className="flex items-center gap-1.5 px-2.5 py-1 rounded bg-black/50 border border-white/[0.06]">
               <Clock className="w-3.5 h-3.5 text-cyan-400" />
-              <span className="text-zinc-400">TOTAL LATENCY:</span>
+              <span className="text-zinc-400">LATENCY:</span>
               <strong className="text-white">{currentPipeline.totalLatency}</strong>
             </div>
 
@@ -423,7 +423,7 @@ export function ArchitectureDiagram() {
               ) : (
                 <>
                   <Play className="w-3.5 h-3.5" />
-                  <span>SIMULATE PACKET FLOW</span>
+                  <span>SIMULATE FLOW</span>
                 </>
               )}
             </button>

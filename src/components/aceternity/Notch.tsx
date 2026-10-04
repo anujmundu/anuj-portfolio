@@ -21,7 +21,7 @@ export function Notch({ onOpenRecruiter }: NotchProps) {
   };
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 pointer-events-auto">
+    <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 pointer-events-auto max-w-[calc(100vw-2rem)]">
       <motion.div
         layout
         onMouseEnter={() => setIsOpen(true)}
@@ -29,7 +29,7 @@ export function Notch({ onOpenRecruiter }: NotchProps) {
         onClick={() => setIsOpen(!isOpen)}
         transition={{ type: "spring", stiffness: 400, damping: 30 }}
         className={`relative cursor-pointer bg-black/90 backdrop-blur-2xl border border-white/[0.15] hover:border-cyan-400/80 rounded-full shadow-[0_10px_35px_rgba(0,0,0,0.8),0_0_20px_rgba(0,229,255,0.2)] transition-colors overflow-hidden ${
-          isOpen ? "px-6 py-3 rounded-2xl w-[360px] max-w-[85vw]" : "px-4 py-2 w-auto"
+          isOpen ? "px-5 py-3 rounded-2xl w-[340px] max-w-[calc(100vw-2rem)]" : "px-3.5 sm:px-4 py-2 w-auto"
         }`}
       >
         {/* Compact Pill State */}

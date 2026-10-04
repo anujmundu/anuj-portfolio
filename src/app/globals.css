@@ -378,3 +378,45 @@
   animation: move 3s linear infinite;
 }
 
+/* ============================================================================ */
+/* TV & 4K ULTRA-WIDE MONITOR DISPLAY ENHANCEMENTS                              */
+/* ============================================================================ */
+@media (min-width: 1920px) {
+  :root {
+    font-size: 17px;
+  }
+  .max-w-7xl {
+    max-width: 1600px !important;
+  }
+}
+
+@media (min-width: 2560px) {
+  :root {
+    font-size: 19px;
+  }
+  .max-w-7xl {
+    max-width: 2160px !important;
+  }
+  .technical-grid {
+    background-size: 60px 60px !important;
+  }
+}
+
+@media (min-width: 3840px) {
+  :root {
+    font-size: 24px;
+  }
+  .max-w-7xl {
+    max-width: 3200px !important;
+  }
+}
+
+/* Mobile First Safe Viewport Containment */
+@media (max-width: 640px) {
+  html, body {
+    overflow-x: hidden !important;
+    width: 100vw !important;
+    max-width: 100vw !important;
+  }
+}
+

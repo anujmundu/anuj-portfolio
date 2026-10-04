@@ -150,10 +150,10 @@ export const TypewriterEffectSmooth = ({
   }));
 
   return (
-    <div className={cn("flex items-center space-x-1.5 my-3", className)}>
+    <div className={cn("flex items-center space-x-1.5 my-3 max-w-full overflow-hidden", className)}>
       <motion.div
         key={`phrase-${currentIdx}-${isDeleting ? "del" : "type"}`}
-        className="overflow-hidden pb-1"
+        className="overflow-hidden pb-1 max-w-full"
         initial={{
           width: isDeleting ? "100%" : "0%",
         }}
@@ -167,7 +167,7 @@ export const TypewriterEffectSmooth = ({
       >
         <div
           className={cn(
-            "text-sm sm:text-base md:text-xl lg:text-2xl font-semibold",
+            "text-xs sm:text-base md:text-xl lg:text-2xl font-semibold truncate",
             textClassName
           )}
           style={{
