@@ -126,6 +126,21 @@ export default async function CaseStudyPage({ params }: PageProps) {
           <div className="text-xs uppercase tracking-widest text-cyan-400 font-bold">
             // INTERACTIVE SYSTEM TELEMETRY & DIAGNOSTIC LAB
           </div>
+          {project.slug === "pulsemetrics-bi" && (
+            <CohortRetentionGrid />
+          )}
+          {project.slug === "image-classification-neural-network" && (
+            <div className="space-y-6">
+              <GradCamSliderSim />
+              <LatencyBenchmarkSim />
+            </div>
+          )}
+          {project.slug === "profit-prediction-system" && (
+            <div className="space-y-6">
+              <ShapWaterfallSim />
+              <ThresholdCalibrator />
+            </div>
+          )}
           {project.slug === "lung-nodule-detection" && (
             <div className="space-y-6">
               <VisionDetectionSim />
@@ -149,7 +164,7 @@ export default async function CaseStudyPage({ params }: PageProps) {
             </div>
           )}
           {project.slug === "distributed-task-engine" && (
-            <CohortRetentionGrid />
+            <LatencyBenchmarkSim />
           )}
         </section>
 

@@ -59,47 +59,47 @@ const ROLE_PROFILES: Record<TargetRole, {
     badge: "CORE STRENGTH",
     matchScore: 99.4,
     pitch: "Full-lifecycle production engineer building FastAPI/Docker microservices, PyTorch inference backends, agentic RAG with HNSW vector indices, and Celery task meshes.",
-    topSkills: ["PyTorch 2.5", "FastAPI & AsyncIO", "Docker & Kubernetes", "Agentic RAG", "Redis Queue", "Ray Distributed"],
+    topSkills: ["PyTorch 2.6", "FastAPI & AsyncIO", "Docker & Kubernetes", "Agentic RAG", "Redis Queue", "Ray Distributed"],
     keyProjects: [
+      { slug: "omnivision-docintel-api", metric: "P95 < 65ms ELA" },
       { slug: "omniforge-ai", metric: "38.4ms P95 Latency" },
-      { slug: "lung-nodule-detection", metric: "94.8% mAP@50" },
-      { slug: "employee-attrition-prediction", metric: "85% Acc / 0.89 AUC" }
+      { slug: "ai-resume-screening", metric: "0-100 Matching Engine" }
     ]
   },
   CV: {
     label: "Computer Vision Specialist",
     badge: "CLINICAL GRADE",
     matchScore: 98.8,
-    pitch: "Engineers real-time object detection and diagnostic CADx models with YOLOv8/v5, CBAM attention mechanisms, Grad-CAM explainability, and TensorRT FP16/INT8 compilation.",
-    topSkills: ["YOLOv8 & Decoupled Heads", "CBAM Dual Attention", "OpenCV Hardware CUDA", "Grad-CAM Heatmaps", "TensorRT INT8", "DICOM & Radiomics"],
+    pitch: "Engineers real-time object detection and diagnostic CADx models with YOLOv8/v5, CBAM attention mechanisms, Grad-CAM explainability, and TensorRT/ONNX INT8 quantization.",
+    topSkills: ["YOLOv5-CASP", "ONNX INT8 Quantization", "CBAM & ASPP Attention", "OpenCV Forensics (ELA)", "Grad-CAM Heatmaps", "DICOM & Radiomics"],
     keyProjects: [
-      { slug: "lung-nodule-detection", metric: "94.8% mAP Clinical" },
-      { slug: "omniforge-ai", metric: "Multimodal Tensor Core" },
-      { slug: "diabetes-prediction-system", metric: "98.2% Sensitivity" }
+      { slug: "image-classification-neural-network", metric: "98.92% Top-5 / 3.01x ONNX" },
+      { slug: "lung-nodule-detection", metric: "94.2% Sensitivity Clinical" },
+      { slug: "omnivision-docintel-api", metric: "ELA Forensics Std > 18" }
     ]
   },
   DATA_SCIENCE: {
     label: "Data Scientist & MLOps",
     badge: "STATISTICAL RIGOR",
     matchScore: 98.2,
-    pitch: "Applies rigorous hypothesis validation, Bayesian hyperparameter tuning (Optuna), exact TreeSHAP explainability, and drift detection (KS-test / PSI) to mitigate silent model decay.",
-    topSkills: ["Scikit-Learn", "XGBoost & LightGBM", "TreeSHAP Local/Global", "Optuna Bayesian", "Kolmogorov-Smirnov Drift", "Purged K-Fold"],
+    pitch: "Applies rigorous hypothesis validation, multi-model ML tournaments, exact TreeSHAP explainability, and drift detection (KS-test / PSI) to mitigate silent model decay.",
+    topSkills: ["Scikit-Learn", "SciPy SLSQP", "TreeSHAP Local/Global", "Optuna Bayesian", "Kolmogorov-Smirnov Drift", "Purged K-Fold"],
     keyProjects: [
-      { slug: "employee-attrition-prediction", metric: "85% Acc / 0.89 AUC" },
-      { slug: "diabetes-prediction-system", metric: "98.2% Clinical Sen" },
-      { slug: "omniforge-ai", metric: "Hybrid Forecasting" }
+      { slug: "profit-prediction-system", metric: "10-Model Tournament / SLSQP" },
+      { slug: "employee-attrition-prediction", metric: "0.894 ROC-AUC / TreeSHAP" },
+      { slug: "diabetes-prediction-system", metric: "0.9810 ROC-AUC Clinical" }
     ]
   },
   DATA_ANALYTICS: {
     label: "Data Analytics Engineer",
     badge: "DATA VECTORIZED",
     matchScore: 97.6,
-    pitch: "Architects scalable analytical pipelines, complex SQL CTEs, window aggregations, cohort retention curves, and high-throughput data munging over millions of records.",
-    topSkills: ["Advanced SQL (CTEs, Window)", "Polars & Pandas Vectorized", "Star Schema & Data Warehousing", "Cohort & LTV Analysis", "Statistical Hypothesis (Chi-Square)"],
+    pitch: "Architects scalable analytical pipelines, in-process DuckDB columnar OLAP, Levenshtein fuzzy reconciliation, cohort retention curves, and high-throughput data munging over millions of records.",
+    topSkills: ["DuckDB Columnar OLAP", "TheFuzz Levenshtein Matching", "Star Schema & Data Warehousing", "Cohort & LTV Analysis", "Plotly & Streamlit"],
     keyProjects: [
-      { slug: "employee-attrition-prediction", metric: "LTV & Attrition Cohorts" },
-      { slug: "omniforge-ai", metric: "Multimodal Pipeline" },
-      { slug: "diabetes-prediction-system", metric: "Biomarker Feature Pipeline" }
+      { slug: "pulsemetrics-bi", metric: "541k+ Rows in <1.2s DuckDB" },
+      { slug: "autorecon-enterprise", metric: "25+ Hrs/Wk AP Saved" },
+      { slug: "technical-event-erp-flask", metric: "RBAC 3-Tier Enterprise" }
     ]
   }
 };
@@ -527,12 +527,12 @@ export function RecruiterDrawer({ isOpen, onClose }: RecruiterDrawerProps) {
                     <Flame className="w-3.5 h-3.5 text-cyan-400" />
                     <span>LENS 03 // LIVE CLOUD DEPLOYMENTS & BENCHMARKS:</span>
                   </span>
-                  <span className="text-zinc-500 font-mono">4 VERIFIED APPS</span>
+                  <span className="text-zinc-500 font-mono">11 LIVE DEPLOYED APPS</span>
                 </div>
 
                 <div className="space-y-2">
                   {PROJECTS.map((p) => {
-                    const isFlagship = ["omniforge-ai", "lung-nodule-detection", "employee-attrition-prediction", "diabetes-prediction-system"].includes(p.slug);
+                    const isFlagship = Boolean(p.liveUrl);
                     if (!isFlagship) return null;
 
                     return (

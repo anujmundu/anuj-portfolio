@@ -101,12 +101,12 @@ export function SelectedWork() {
               <div className="hidden sm:flex items-center gap-3 font-mono text-[11px] text-zinc-400 bg-white/[0.03] border border-white/[0.08] px-3.5 py-1.5 rounded-full backdrop-blur-md">
                 <span className="flex items-center gap-1.5 text-emerald-400 font-semibold">
                   <ShieldCheck className="w-3.5 h-3.5" />
-                  <span>8 SYSTEMS VERIFIED</span>
+                  <span>11 LIVE CLOUD APPS // 15 VERIFIED SYSTEMS</span>
                 </span>
                 <span className="text-zinc-600">|</span>
                 <span className="text-cyan-400">P95 &lt; 40ms</span>
                 <span className="text-zinc-600">|</span>
-                <span className="text-zinc-300">PRODUCTION K8S MESH</span>
+                <span className="text-zinc-300">PRODUCTION K8S &amp; OLAP</span>
               </div>
             </div>
 
@@ -125,14 +125,14 @@ export function SelectedWork() {
               {/* Aggregated Empirical Telemetry Ribbon */}
               <div className="lg:col-span-4 grid grid-cols-2 gap-3 font-mono text-xs">
                 <div className="p-3 rounded-lg bg-[#060911]/80 border border-cyan-500/20 shadow-inner">
-                  <div className="text-[10px] text-zinc-500 uppercase tracking-wider">THROUGHPUT</div>
-                  <div className="text-lg sm:text-xl font-black text-cyan-300 mt-0.5">1.4M+ Rows</div>
-                  <div className="text-[9px] text-zinc-400">Distributed Task Mesh</div>
+                  <div className="text-[10px] text-zinc-500 uppercase tracking-wider">OLAP SPEED</div>
+                  <div className="text-lg sm:text-xl font-black text-cyan-300 mt-0.5">541K+ Rows</div>
+                  <div className="text-[9px] text-zinc-400">DuckDB Sub-1.2s Scan</div>
                 </div>
                 <div className="p-3 rounded-lg bg-[#060911]/80 border border-emerald-500/20 shadow-inner">
-                  <div className="text-[10px] text-zinc-500 uppercase tracking-wider">DEFENSE</div>
-                  <div className="text-lg sm:text-xl font-black text-emerald-400 mt-0.5">100% Zero-Shot</div>
-                  <div className="text-[9px] text-zinc-400">Jailbreak Guardrails</div>
+                  <div className="text-[10px] text-zinc-500 uppercase tracking-wider">ACCELERATION</div>
+                  <div className="text-lg sm:text-xl font-black text-emerald-400 mt-0.5">3.01x ONNX</div>
+                  <div className="text-[9px] text-zinc-400">98.92% Top-5 Ensemble</div>
                 </div>
               </div>
             </div>
@@ -188,6 +188,9 @@ export function SelectedWork() {
                 {filteredProjects.map((project, idx) => {
                   const currentTab = getCardTab(project.slug);
                   const hasSimulator = [
+                    "pulsemetrics-bi",
+                    "image-classification-neural-network",
+                    "profit-prediction-system",
                     "omniforge-ai",
                     "lung-nodule-detection",
                     "employee-attrition-prediction",
@@ -404,9 +407,12 @@ export function SelectedWork() {
                               <CardItem translateZ={45} className="w-full">
                                 {currentTab === "sim" && hasSimulator && (
                                   <div className="w-full">
+                                    {project.slug === "pulsemetrics-bi" && <CohortRetentionGrid />}
+                                    {project.slug === "image-classification-neural-network" && <GradCamSliderSim />}
+                                    {project.slug === "profit-prediction-system" && <ShapWaterfallSim />}
                                     {project.slug === "lung-nodule-detection" && <VisionDetectionSim />}
                                     {project.slug === "employee-attrition-prediction" && <ShapWaterfallSim />}
-                                    {project.slug === "omniforge-ai" && <GradCamSliderSim />}
+                                    {project.slug === "omniforge-ai" && <VisionDetectionSim />}
                                     {project.slug === "distributed-task-engine" && <CohortRetentionGrid />}
                                   </div>
                                 )}

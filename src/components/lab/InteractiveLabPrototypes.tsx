@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Play, Code, CheckCircle, Cpu, Zap, Activity, Layers, ArrowRight } from "lucide-react";
+import { Play, Code, CheckCircle, Cpu, Zap, Activity, Layers, ArrowRight, ShieldCheck } from "lucide-react";
 import { playClick, playChirp, playSuccess } from "@/lib/audio";
 
 export function InteractiveLabPrototypes() {
@@ -188,6 +188,150 @@ export function InteractiveLabPrototypes() {
               <span>{isQuantized ? "REVERT TO FP32" : "QUANTIZE TO INT8"}</span>
             </button>
             <span className="text-[10px] text-purple-300 font-bold">-75% RAM</span>
+          </div>
+        </div>
+      </div>
+
+      {/* High-Assurance Architectural Systems & Repositories */}
+      <div className="pt-8 space-y-4">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-white/[0.08] pb-3">
+          <div className="text-xs uppercase tracking-widest text-zinc-400 font-bold flex items-center gap-2">
+            <ShieldCheck className="w-4 h-4 text-emerald-400" />
+            <span>04 // HIGH-ASSURANCE SYSTEMS & ARCHITECTURAL BENCHMARKS</span>
+          </div>
+          <span className="text-[11px] text-zinc-500">Rigorous Test Suites &amp; Clean Architecture</span>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {/* Anuj AI Lab */}
+          <div className="p-5 rounded-xl border border-white/[0.08] bg-[#070a12] space-y-3 hover:border-cyan-400/40 transition-all group">
+            <div className="flex items-center justify-between">
+              <span className="px-2.5 py-0.5 rounded-full bg-cyan-950/60 text-cyan-300 border border-cyan-500/30 text-[10px] font-bold">
+                419 TESTS (100% PASS)
+              </span>
+              <a
+                href="https://github.com/anujmundu/anuj-ai-lab"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-zinc-500 hover:text-white flex items-center gap-1 text-[11px] transition-colors"
+              >
+                <span>SOURCE REPO</span>
+                <ArrowRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
+              </a>
+            </div>
+            <div>
+              <h4 className="text-sm font-bold text-white group-hover:text-cyan-300 transition-colors">
+                Anuj AI Lab — Local Agentic Platform
+              </h4>
+              <p className="text-xs font-sans text-zinc-400 mt-1 leading-relaxed">
+                Production-grade local AI engineering platform for agentic RAG, semantic retrieval, conversation memory, and autonomous tool-calling workflows.
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-1.5 pt-1 font-mono text-[10px] text-zinc-400">
+              <span className="px-2 py-0.5 rounded bg-white/[0.03] border border-white/[0.06]">FastAPI</span>
+              <span className="px-2 py-0.5 rounded bg-white/[0.03] border border-white/[0.06]">React 19</span>
+              <span className="px-2 py-0.5 rounded bg-white/[0.03] border border-white/[0.06]">TypeScript 5</span>
+              <span className="px-2 py-0.5 rounded bg-white/[0.03] border border-white/[0.06]">Ollama</span>
+              <span className="px-2 py-0.5 rounded bg-white/[0.03] border border-white/[0.06]">ChromaDB</span>
+            </div>
+          </div>
+
+          {/* RF Signal Classification */}
+          <div className="p-5 rounded-xl border border-white/[0.08] bg-[#070a12] space-y-3 hover:border-emerald-400/40 transition-all group">
+            <div className="flex items-center justify-between">
+              <span className="px-2.5 py-0.5 rounded-full bg-emerald-950/60 text-emerald-300 border border-emerald-500/30 text-[10px] font-bold">
+                128 TESTS (100% PASS)
+              </span>
+              <a
+                href="https://github.com/anujmundu/rf-signal-classification-spectrograms"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-zinc-500 hover:text-white flex items-center gap-1 text-[11px] transition-colors"
+              >
+                <span>SOURCE REPO</span>
+                <ArrowRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
+              </a>
+            </div>
+            <div>
+              <h4 className="text-sm font-bold text-white group-hover:text-emerald-300 transition-colors">
+                RF Signal Classification &amp; AMC Suite
+              </h4>
+              <p className="text-xs font-sans text-zinc-400 mt-1 leading-relaxed">
+                Clean Architecture deep learning framework for Automatic Modulation Classification (AMC) across noisy wireless channels (Rayleigh fading &amp; AWGN).
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-1.5 pt-1 font-mono text-[10px] text-zinc-400">
+              <span className="px-2 py-0.5 rounded bg-white/[0.03] border border-white/[0.06]">PyTorch</span>
+              <span className="px-2 py-0.5 rounded bg-white/[0.03] border border-white/[0.06]">SciPy Signal</span>
+              <span className="px-2 py-0.5 rounded bg-white/[0.03] border border-white/[0.06]">I/Q Spectrograms</span>
+              <span className="px-2 py-0.5 rounded bg-white/[0.03] border border-white/[0.06]">Ray / Optuna</span>
+            </div>
+          </div>
+
+          {/* Maritime FuelEU */}
+          <div className="p-5 rounded-xl border border-white/[0.08] bg-[#070a12] space-y-3 hover:border-purple-400/40 transition-all group">
+            <div className="flex items-center justify-between">
+              <span className="px-2.5 py-0.5 rounded-full bg-purple-950/60 text-purple-300 border border-purple-500/30 text-[10px] font-bold">
+                HEXAGONAL ARCHITECTURE
+              </span>
+              <a
+                href="https://github.com/anujmundu/Maritime-FuelEU"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-zinc-500 hover:text-white flex items-center gap-1 text-[11px] transition-colors"
+              >
+                <span>SOURCE REPO</span>
+                <ArrowRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
+              </a>
+            </div>
+            <div>
+              <h4 className="text-sm font-bold text-white group-hover:text-purple-300 transition-colors">
+                FuelEU Maritime Decarbonization Platform
+              </h4>
+              <p className="text-xs font-sans text-zinc-400 mt-1 leading-relaxed">
+                Full-stack maritime compliance ledger calculating route GHG intensity, Compliance Balance (CB), and Articles 20/21 banking and pooling.
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-1.5 pt-1 font-mono text-[10px] text-zinc-400">
+              <span className="px-2 py-0.5 rounded bg-white/[0.03] border border-white/[0.06]">TypeScript</span>
+              <span className="px-2 py-0.5 rounded bg-white/[0.03] border border-white/[0.06]">Node.js</span>
+              <span className="px-2 py-0.5 rounded bg-white/[0.03] border border-white/[0.06]">PostgreSQL</span>
+              <span className="px-2 py-0.5 rounded bg-white/[0.03] border border-white/[0.06]">Prisma ORM</span>
+              <span className="px-2 py-0.5 rounded bg-white/[0.03] border border-white/[0.06]">React</span>
+            </div>
+          </div>
+
+          {/* Distributed Hyperparameter Tuner */}
+          <div className="p-5 rounded-xl border border-white/[0.08] bg-[#070a12] space-y-3 hover:border-amber-400/40 transition-all group">
+            <div className="flex items-center justify-between">
+              <span className="px-2.5 py-0.5 rounded-full bg-amber-950/60 text-amber-300 border border-amber-500/30 text-[10px] font-bold">
+                RABBITMQ + POSTGRESQL
+              </span>
+              <a
+                href="https://github.com/anujmundu/distributed-hyperparameter-tuner"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-zinc-500 hover:text-white flex items-center gap-1 text-[11px] transition-colors"
+              >
+                <span>SOURCE REPO</span>
+                <ArrowRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
+              </a>
+            </div>
+            <div>
+              <h4 className="text-sm font-bold text-white group-hover:text-amber-300 transition-colors">
+                Distributed Hyperparameter Tuning Framework
+              </h4>
+              <p className="text-xs font-sans text-zinc-400 mt-1 leading-relaxed">
+                Decoupled scheduler-worker architecture distributing intensive hyperparameter trials across worker nodes with durable queues and fault tolerance.
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-1.5 pt-1 font-mono text-[10px] text-zinc-400">
+              <span className="px-2 py-0.5 rounded bg-white/[0.03] border border-white/[0.06]">RabbitMQ</span>
+              <span className="px-2 py-0.5 rounded bg-white/[0.03] border border-white/[0.06]">PostgreSQL</span>
+              <span className="px-2 py-0.5 rounded bg-white/[0.03] border border-white/[0.06]">Docker</span>
+              <span className="px-2 py-0.5 rounded bg-white/[0.03] border border-white/[0.06]">PyTorch</span>
+              <span className="px-2 py-0.5 rounded bg-white/[0.03] border border-white/[0.06]">Scikit-Learn</span>
+            </div>
           </div>
         </div>
       </div>

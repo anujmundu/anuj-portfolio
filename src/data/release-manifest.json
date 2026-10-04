@@ -1,15 +1,19 @@
 {
   "project": "Anuj Mundu — AI/ML Production Portfolio",
-  "version": "1.0.160",
-  "buildPhase": "Release Candidate",
-  "commitNumber": 160,
-  "totalCommits": 160,
-  "timestamp": "2026-10-03T21:30:50+05:30",
-  "message": "feat: finalize production release v1.0.0 of Anuj Mundu AI/ML portfolio",
+  "version": "1.1.0",
+  "buildPhase": "Production Multi-System Release",
+  "commitNumber": 165,
+  "totalCommits": 165,
+  "timestamp": "2026-10-04T12:00:00+05:30",
+  "message": "feat: integrate 11 live deployed systems and high-assurance architectural benchmarks",
   "verifiedBenchmarks": {
-    "apiLatency": "38.4ms P95",
-    "computerVisionMap": "94.8% mAP@50",
-    "attritionAuc": "0.89 ROC-AUC",
-    "diabetesSensitivity": "98.2%"
+    "olapThroughput": "541k+ Rows in <1.2s (DuckDB)",
+    "visionEnsemble": "98.92% Top-5 / 3.01x ONNX INT8",
+    "forensicsLatency": "< 65ms P95 (OpenCV ELA)",
+    "apiLatency": "38.4ms P95 (FastAPI Async)",
+    "computerVisionMap": "94.2% Small Nodule Sensitivity",
+    "profitOptimization": "SLSQP < 42ms / 10k Monte Carlo",
+    "attritionAuc": "0.894 ROC-AUC",
+    "diabetesSensitivity": "96.4% / 0.9810 ROC-AUC"
   }
 }

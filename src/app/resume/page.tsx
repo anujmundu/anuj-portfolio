@@ -132,7 +132,7 @@ export default function ResumePage() {
             </h2>
 
             <div className="space-y-4 text-xs">
-              {PROJECTS.map((proj) => (
+              {PROJECTS.filter((p) => p.featured).map((proj) => (
                 <div key={proj.slug} className="space-y-1.5">
                   <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
                     <span className="text-white print:text-black font-bold text-sm">
