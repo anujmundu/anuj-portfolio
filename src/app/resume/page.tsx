@@ -72,7 +72,7 @@ export default function ResumePage() {
             </div>
 
             <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-zinc-400 print:text-zinc-700 pt-1">
-              <span>anujmark.edwin.ame@gmail.com</span>
+              <span>anuj.engineering.ai@gmail.com</span>
               <span>•</span>
               <span>Bhopal, India (Open to Remote / Relocation)</span>
               <span>•</span>
@@ -83,17 +83,17 @@ export default function ResumePage() {
           </header>
 
           {/* Professional Summary */}
-          <section className="space-y-2">
+          <section className="space-y-2 break-inside-avoid print:break-inside-avoid">
             <h2 className="text-xs uppercase tracking-widest text-cyan-400 print:text-black font-bold border-b border-white/[0.06] print:border-black/10 pb-1">
               PROFESSIONAL SUMMARY
             </h2>
             <p className="text-xs sm:text-sm font-sans text-zinc-300 print:text-zinc-800 leading-relaxed">
-              Applied AI/ML Engineer, Data Scientist, and Data Analyst specializing in the end-to-end lifecycle: from SQL database extraction and exploratory data analysis to statistical predictive modeling in Scikit-Learn, deep learning computer vision in PyTorch, and low-latency microservice deployment via FastAPI and Docker.
+              Applied AI/ML Systems Engineer, Data Scientist, and Python Backend Architect specializing in the end-to-end lifecycle: from SQL database extraction and exploratory data analysis to statistical predictive modeling in Scikit-Learn, deep learning computer vision in PyTorch, and low-latency microservice deployment via FastAPI and Docker.
             </p>
           </section>
 
           {/* Technical Skills Matrix */}
-          <section className="space-y-3">
+          <section className="space-y-3 break-inside-avoid print:break-inside-avoid">
             <h2 className="text-xs uppercase tracking-widest text-cyan-400 print:text-black font-bold border-b border-white/[0.06] print:border-black/10 pb-1">
               CORE TECHNICAL SKILLS
             </h2>
@@ -101,25 +101,25 @@ export default function ResumePage() {
               <div>
                 <strong className="text-white print:text-black">01. Data Analytics:</strong>{" "}
                 <span className="text-zinc-400 print:text-zinc-700">
-                  SQL (PostgreSQL), Python, Pandas, NumPy, Statistics, EDA, Data Cleaning, Dimensional Modeling (Star Schema), Cohort Retention.
+                  SQL (PostgreSQL), DuckDB Columnar OLAP, Python, Pandas, NumPy, Statistics, EDA, Data Cleaning, Star Schema, Cohort Retention.
                 </span>
               </div>
               <div>
-                <strong className="text-white print:text-black">02. Data Science:</strong>{" "}
+                <strong className="text-white print:text-black">02. Data Science &amp; MLOps:</strong>{" "}
                 <span className="text-zinc-400 print:text-zinc-700">
-                  Scikit-Learn, XGBoost, Feature Engineering, Calibrated Cross-Validation, SHAP Factor Attribution, ROC-AUC, Precision-Recall.
+                  Scikit-Learn, XGBoost, Feature Engineering, Calibrated Cross-Validation, SHAP Factor Attribution, ROC-AUC, Purged K-Fold.
                 </span>
               </div>
               <div>
-                <strong className="text-white print:text-black">03. AI & Computer Vision:</strong>{" "}
+                <strong className="text-white print:text-black">03. AI &amp; Computer Vision:</strong>{" "}
                 <span className="text-zinc-400 print:text-zinc-700">
-                  PyTorch 2.x, OpenCV, YOLOv5, Torchvision, Transfer Learning, ResNet-50, Grad-CAM, INT8 ONNX Runtime Quantization.
+                  PyTorch 2.5, OpenCV, YOLOv5-CASP, Torchvision, Transfer Learning, ResNet-50, Grad-CAM, INT8 ONNX Runtime Quantization.
                 </span>
               </div>
               <div>
-                <strong className="text-white print:text-black">04. Software & Deployment:</strong>{" "}
+                <strong className="text-white print:text-black">04. Distributed Backend &amp; Deploy:</strong>{" "}
                 <span className="text-zinc-400 print:text-zinc-700">
-                  FastAPI, REST APIs, Redis Queues, Multi-Stage Docker, Git, Linux CLI, WebSocket Feeds, CI/CD.
+                  FastAPI, Redis Task Queues, RabbitMQ, Multi-Stage Docker, Hexagonal Architecture, Git, Linux CLI, CI/CD.
                 </span>
               </div>
             </div>
@@ -133,7 +133,7 @@ export default function ResumePage() {
 
             <div className="space-y-4 text-xs">
               {PROJECTS.filter((p) => p.featured).map((proj) => (
-                <div key={proj.slug} className="space-y-1.5">
+                <div key={proj.slug} className="space-y-1.5 break-inside-avoid print:break-inside-avoid">
                   <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
                     <span className="text-white print:text-black font-bold text-sm">
                       {proj.title}
@@ -158,12 +158,12 @@ export default function ResumePage() {
           {/* Experience & Education */}
           <section className="space-y-4">
             <h2 className="text-xs uppercase tracking-widest text-cyan-400 print:text-black font-bold border-b border-white/[0.06] print:border-black/10 pb-1">
-              EXPERIENCE & EDUCATION
+              EXPERIENCE &amp; EDUCATION
             </h2>
 
             <div className="space-y-4 text-xs">
               {TIMELINE.map((item, idx) => (
-                <div key={idx} className="space-y-1">
+                <div key={idx} className="space-y-1 break-inside-avoid print:break-inside-avoid">
                   <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
                     <span className="text-white print:text-black font-bold">
                       {item.role}

@@ -610,6 +610,7 @@ export function RecruiterDrawer({ isOpen, onClose }: RecruiterDrawerProps) {
                                 href={p.liveUrl}
                                 target="_blank"
                                 rel="noopener noreferrer"
+                                title={p.liveUrl.includes("onrender.com") ? "Cloud Edge Host · Render Free Tier (Allow ~30s spin-up if instance is dormant)" : "Live Cloud Application (Streamlit Edge)"}
                                 className="px-2 py-1 rounded bg-gradient-to-r from-emerald-500/20 to-teal-500/20 hover:from-emerald-500/40 hover:to-teal-500/40 border border-emerald-500/40 text-emerald-300 hover:text-white font-bold text-[9px] flex items-center gap-1 transition-all"
                               >
                                 <span>LIVE APP</span>

@@ -291,6 +291,7 @@ export function SelectedWork() {
                                   href={project.liveUrl}
                                   target="_blank"
                                   rel="noopener noreferrer"
+                                  title={project.liveUrl.includes("onrender.com") ? "Cloud Edge Host · Render Free Tier (Allow ~30s spin-up if instance is dormant)" : "Live Cloud Application (Streamlit Edge)"}
                                   className="flex items-center gap-1.5 text-cyan-300 hover:text-white text-[11px] px-2.5 py-0.5 rounded-full bg-cyan-950/60 border border-cyan-400/60 font-bold transition-all shadow-[0_0_12px_rgba(0,229,255,0.35)] hover:shadow-[0_0_20px_rgba(0,229,255,0.7)] group/live"
                                 >
                                   <span className="relative flex h-2 w-2">
@@ -298,6 +299,9 @@ export function SelectedWork() {
                                     <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-400 shadow-[0_0_6px_#00e5ff]"></span>
                                   </span>
                                   <span>LIVE CLOUD APP</span>
+                                  {project.liveUrl.includes("onrender.com") && (
+                                    <span className="text-[8px] text-amber-300 font-normal hidden xl:inline">• 30s WAKEUP</span>
+                                  )}
                                   <ArrowUpRight className="w-3 h-3 group-hover/live:translate-x-0.5 group-hover/live:-translate-y-0.5 transition-transform" />
                                 </a>
                               ) : (

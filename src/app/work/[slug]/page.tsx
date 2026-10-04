@@ -138,6 +138,12 @@ export default async function CaseStudyPage({ params }: PageProps) {
           {project.slug === "pulsemetrics-bi" && (
             <CohortRetentionGrid />
           )}
+          {project.slug === "omnivision-docintel-api" && (
+            <div className="space-y-6">
+              <VisionDetectionSim />
+              <LatencyBenchmarkSim />
+            </div>
+          )}
           {project.slug === "image-classification-neural-network" && (
             <div className="space-y-6">
               <GradCamSliderSim />
@@ -150,10 +156,26 @@ export default async function CaseStudyPage({ params }: PageProps) {
               <ThresholdCalibrator />
             </div>
           )}
+          {project.slug === "autorecon-enterprise" && (
+            <div className="space-y-6">
+              <ThresholdCalibrator />
+              <LatencyBenchmarkSim />
+            </div>
+          )}
+          {project.slug === "omniforge-ai" && (
+            <div className="space-y-6">
+              <LatencyBenchmarkSim />
+            </div>
+          )}
           {project.slug === "lung-nodule-detection" && (
             <div className="space-y-6">
               <VisionDetectionSim />
               <GradCamSliderSim />
+            </div>
+          )}
+          {project.slug === "diabetes-prediction-system" && (
+            <div className="space-y-6">
+              <ThresholdCalibrator />
             </div>
           )}
           {project.slug === "employee-attrition-prediction" && (
@@ -162,17 +184,25 @@ export default async function CaseStudyPage({ params }: PageProps) {
               <ThresholdCalibrator />
             </div>
           )}
-          {project.slug === "omniforge-ai" && (
+          {project.slug === "technical-event-erp-flask" && (
+            <LatencyBenchmarkSim />
+          )}
+          {project.slug === "ai-resume-screening" && (
             <div className="space-y-6">
+              <ThresholdCalibrator />
               <LatencyBenchmarkSim />
             </div>
           )}
-          {project.slug === "diabetes-prediction-system" && (
-            <div className="space-y-6">
-              <ThresholdCalibrator />
-            </div>
-          )}
           {project.slug === "distributed-task-engine" && (
+            <LatencyBenchmarkSim />
+          )}
+          {project.slug === "reinforcement-learning-job-scheduling" && (
+            <LatencyBenchmarkSim />
+          )}
+          {project.slug === "ddos-entropy-simulator" && (
+            <ThresholdCalibrator />
+          )}
+          {project.slug === "ai-code-review-assistant" && (
             <LatencyBenchmarkSim />
           )}
         </section>

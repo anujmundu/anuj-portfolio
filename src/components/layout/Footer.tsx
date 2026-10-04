@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { ArrowUp, Mail, FileText } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "@/components/ui/Icons";
+import { QuickContactTerminal } from "@/components/ui/QuickContactTerminal";
 
 export function Footer() {
   const [time, setTime] = useState<string>("");
@@ -74,7 +75,7 @@ export function Footer() {
               <span>LINKEDIN</span>
             </a>
             <a
-              href="mailto:anujmark.edwin.ame@gmail.com"
+              href="mailto:anuj.engineering.ai@gmail.com"
               className="flex items-center gap-1.5 hover:text-cyan-400 transition-colors"
               data-cursor="button"
             >
@@ -92,6 +93,11 @@ export function Footer() {
             <ArrowUp className="w-3.5 h-3.5" />
           </button>
         </div>
+      </div>
+
+      {/* Quick Recruiter Dispatch Terminal */}
+      <div className="max-w-7xl mx-auto mt-12">
+        <QuickContactTerminal />
       </div>
 
       <div className="max-w-7xl mx-auto mt-12 pt-6 border-t border-white/[0.04] flex flex-col sm:flex-row justify-between items-center gap-4 text-[11px] text-zinc-600">
