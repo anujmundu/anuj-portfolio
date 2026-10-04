@@ -7,6 +7,8 @@ import { ThreeNeuralLattice } from "@/components/lab/ThreeNeuralLattice";
 import { InteractiveConvolutionPlayground } from "@/components/lab/InteractiveConvolutionPlayground";
 import { InteractiveTrainingConvergence } from "@/components/lab/InteractiveTrainingConvergence";
 import { InteractiveLabPrototypes } from "@/components/lab/InteractiveLabPrototypes";
+import { GenerativeSignalCanvas } from "@/components/lab/GenerativeSignalCanvas";
+import { FutureHorizons } from "@/components/lab/FutureHorizons";
 import HeroScrollDemo from "@/components/ui/container-scroll-animation-demo";
 
 export const metadata = {
@@ -115,6 +117,16 @@ export default function LabPage() {
         {/* 07. Interactive Experimental Micro-Projects Consoles */}
         <section className="space-y-4">
           <InteractiveLabPrototypes />
+        </section>
+
+        {/* 08. Generative Tech-Art DSP Spectrogram Canvas */}
+        <section className="space-y-4">
+          <GenerativeSignalCanvas />
+        </section>
+
+        {/* 09. Future Horizons: Agentic AI, Edge Quantization, and Decarbonization */}
+        <section className="space-y-4">
+          <FutureHorizons />
         </section>
 
         {/* Footer Navigation */}

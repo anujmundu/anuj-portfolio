@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, ArrowUpRight, Cpu, Database, Server, CheckCircle2, AlertTriangle, ShieldCheck } from "lucide-react";
+import { ArrowLeft, ArrowUpRight, Cpu, Database, Server, CheckCircle2, AlertTriangle, ShieldCheck, Terminal, Layers } from "lucide-react";
 import { GithubIcon } from "@/components/ui/Icons";
 import { PROJECTS, CaseStudy } from "@/data/projects";
 import { VisionDetectionSim } from "@/components/projects/VisionDetectionSim";
@@ -80,7 +80,7 @@ export default async function CaseStudyPage({ params }: PageProps) {
 
         {/* Hero Section */}
         <header className="space-y-6">
-          <div className="flex items-center gap-3 text-xs text-zinc-400">
+          <div className="flex flex-wrap items-center gap-3 text-xs text-zinc-400">
             <span className="text-cyan-400 font-bold">PROJECT {project.number}</span>
             <span className="text-zinc-700">•</span>
             <span className="uppercase px-2 py-0.5 rounded bg-white/[0.05] border border-white/[0.08] text-white font-semibold">
@@ -88,6 +88,15 @@ export default async function CaseStudyPage({ params }: PageProps) {
             </span>
             <span className="text-zinc-700">•</span>
             <span>{project.capabilityGroup}</span>
+            {project.capstone && (
+              <>
+                <span className="text-zinc-700">•</span>
+                <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-amber-500/15 border border-amber-400/50 text-amber-300 font-extrabold text-[10px] shadow-[0_0_12px_rgba(245,158,11,0.25)]">
+                  <ShieldCheck className="w-3 h-3 text-amber-400" />
+                  <span>FLAGSHIP CAPSTONE</span>
+                </span>
+              </>
+            )}
           </div>
 
           <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold uppercase tracking-tight text-white leading-tight">
@@ -261,6 +270,33 @@ export default async function CaseStudyPage({ params }: PageProps) {
               </div>
             ))}
           </div>
+
+          {/* Architectural Iteration Story (v0 -> v1 -> v2) */}
+          {project.iterationStory && (
+            <div className="p-6 rounded-xl bg-[#080b14] border border-cyan-500/20 space-y-4 mt-6">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-white/[0.06] pb-3">
+                <span className="text-xs uppercase tracking-widest text-cyan-400 font-bold flex items-center gap-2">
+                  <Layers className="w-4 h-4 text-cyan-400" />
+                  <span>ENGINEERING ITERATION &amp; REFACTORING CHRONOLOGY</span>
+                </span>
+                <span className="text-[10px] text-zinc-500">v0 Prototype → v2 Cloud Production</span>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs">
+                <div className="p-4 rounded-lg bg-black/50 border border-white/[0.06] space-y-1.5">
+                  <div className="text-[10px] text-zinc-500 font-bold uppercase">v0 // PROOF OF CONCEPT</div>
+                  <p className="text-zinc-300 font-sans leading-relaxed">{project.iterationStory.v0}</p>
+                </div>
+                <div className="p-4 rounded-lg bg-black/50 border border-white/[0.06] space-y-1.5">
+                  <div className="text-[10px] text-cyan-400 font-bold uppercase">v1 // MODULARIZATION &amp; REFACTOR</div>
+                  <p className="text-zinc-300 font-sans leading-relaxed">{project.iterationStory.v1}</p>
+                </div>
+                <div className="p-4 rounded-lg bg-black/50 border border-emerald-500/30 space-y-1.5 shadow-[0_0_15px_rgba(16,185,129,0.1)]">
+                  <div className="text-[10px] text-emerald-400 font-bold uppercase">v2 // PRODUCTION CLOUD SYSTEM</div>
+                  <p className="text-white font-sans leading-relaxed">{project.iterationStory.v2}</p>
+                </div>
+              </div>
+            </div>
+          )}
         </section>
 
         {/* 05. Model Engineering & Training */}
@@ -312,6 +348,37 @@ export default async function CaseStudyPage({ params }: PageProps) {
               {project.failureAnalysis.mitigationStrategy}
             </div>
           </div>
+
+          {/* Structured Engineering Post-Mortem */}
+          {project.tradeOffPostMortem && (
+            <div className="p-6 rounded-xl bg-[#090b14] border border-amber-500/20 space-y-4">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-white/[0.06] pb-3">
+                <div className="text-xs uppercase tracking-widest text-amber-400 font-bold flex items-center gap-2">
+                  <AlertTriangle className="w-4 h-4 text-amber-400" />
+                  <span>ENGINEERING POST-MORTEM &amp; CONSTRAINT MITIGATION</span>
+                </div>
+                <span className="text-[10px] text-zinc-500">Root-Cause Analysis &amp; Production Telemetry</span>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs font-mono">
+                <div className="p-3.5 rounded-lg bg-black/50 border border-white/[0.06] space-y-1">
+                  <span className="text-[9px] text-zinc-500 uppercase font-bold">Operational Constraint:</span>
+                  <p className="text-zinc-300 font-sans">{project.tradeOffPostMortem.constraint}</p>
+                </div>
+                <div className="p-3.5 rounded-lg bg-black/50 border border-red-500/20 space-y-1">
+                  <span className="text-[9px] text-red-400 uppercase font-bold">Bottleneck Encountered:</span>
+                  <p className="text-zinc-300 font-sans">{project.tradeOffPostMortem.bottleneck}</p>
+                </div>
+                <div className="p-3.5 rounded-lg bg-black/50 border border-cyan-500/20 space-y-1">
+                  <span className="text-[9px] text-cyan-400 uppercase font-bold">Architectural Solution:</span>
+                  <p className="text-zinc-300 font-sans">{project.tradeOffPostMortem.solution}</p>
+                </div>
+                <div className="p-3.5 rounded-lg bg-black/50 border border-emerald-500/20 space-y-1">
+                  <span className="text-[9px] text-emerald-400 uppercase font-bold">Empirical Outcome:</span>
+                  <p className="text-emerald-300 font-sans font-bold">{project.tradeOffPostMortem.outcome}</p>
+                </div>
+              </div>
+            </div>
+          )}
         </section>
 
         {/* 07. Production Deployment & API */}
@@ -372,6 +439,51 @@ export default async function CaseStudyPage({ params }: PageProps) {
               </li>
             ))}
           </ul>
+
+          {/* Ergonomics Rationale */}
+          {project.ergonomicsRationale && (
+            <div className="p-4 rounded-xl bg-[#080914] border border-purple-500/20 space-y-1.5 text-xs mt-4">
+              <span className="text-[10px] text-purple-300 font-bold uppercase tracking-wider block">
+                HUMAN-IN-THE-LOOP UI/UX ERGONOMICS:
+              </span>
+              <p className="text-zinc-300 font-sans leading-relaxed">
+                {project.ergonomicsRationale}
+              </p>
+            </div>
+          )}
+
+          {/* Open Reproducibility & Benchmark Command */}
+          {project.reproducibility && (
+            <div className="p-4 rounded-xl bg-[#060812] border border-cyan-500/30 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs mt-4">
+              <div className="space-y-1">
+                <span className="text-[10px] text-cyan-400 font-bold uppercase tracking-wider block">
+                  OPEN REPRODUCIBILITY &amp; TEST SUITE COMMAND:
+                </span>
+                <code className="px-2.5 py-1 rounded bg-black border border-white/[0.08] text-cyan-300 text-[11px] font-mono inline-block">
+                  {project.reproducibility.command}
+                </code>
+                <p className="text-[10px] text-zinc-400 font-sans">{project.reproducibility.benchmarkSummary}</p>
+              </div>
+            </div>
+          )}
+
+          {/* Suggested Technical Interview Prompts */}
+          {project.interviewQuestions && project.interviewQuestions.length > 0 && (
+            <div className="p-5 rounded-xl bg-[#070914] border border-purple-500/20 space-y-3 text-xs mt-4">
+              <div className="flex items-center gap-2 text-purple-300 font-bold uppercase tracking-wider text-[11px]">
+                <Terminal className="w-3.5 h-3.5 text-purple-400" />
+                <span>TECHNICAL INTERVIEW DISCUSSION PROMPTS</span>
+              </div>
+              <ul className="space-y-2">
+                {project.interviewQuestions.map((q, idx) => (
+                  <li key={idx} className="flex items-start gap-2 text-zinc-300 font-sans italic">
+                    <span className="text-purple-400 font-mono font-bold not-italic">Q{idx + 1}:</span>
+                    <span>"{q}"</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
         </section>
 
         {/* Bottom CTA */}

@@ -74,6 +74,25 @@ export interface CaseStudy {
   githubUrl: string;
   liveUrl?: string;
   apiDocsUrl?: string;
+  capstone?: boolean;
+  iterationStory?: {
+    v0: string;
+    v1: string;
+    v2: string;
+  };
+  tradeOffPostMortem?: {
+    constraint: string;
+    bottleneck: string;
+    solution: string;
+    outcome: string;
+  };
+  interviewQuestions?: string[];
+  ergonomicsRationale?: string;
+  reproducibility?: {
+    command: string;
+    benchmarkSummary: string;
+    colabUrl?: string;
+  };
 }
 
 export const PROJECTS: CaseStudy[] = [
@@ -171,7 +190,19 @@ export const PROJECTS: CaseStudy[] = [
       "Integrate automated LLM explanation notes generated directly from cohort retention drop-offs."
     ],
     githubUrl: "https://github.com/anujmundu/pulsemetrics-bi",
-    liveUrl: "https://pulsemetrics-bi.streamlit.app/"
+    liveUrl: "https://pulsemetrics-bi.streamlit.app/",
+    tradeOffPostMortem: {
+      constraint: "Cloud free-tier host memory limits (<1GB) with 541k transactional records.",
+      bottleneck: "Standard Pandas groupby cohort pivots consumed 1.4GB peak RAM, risking silent OOM kills.",
+      solution: "Migrated analytical aggregation to in-process DuckDB columnar SQL with streaming projection.",
+      outcome: "RAM footprint dropped by 64% (down to 280MB peak) while query execution dropped from 7.4s to 1.18s."
+    },
+    ergonomicsRationale: "Designed for SaaS C-suite executives: eliminated visual clutter, replaced multi-nested menus with tactile 1-click time window presets, and color-coded retention cells with perceptual luminance scales.",
+    interviewQuestions: [
+      "Why use embedded DuckDB over serverless Cloud Data Warehouses (BigQuery/Snowflake) for executive dashboards?",
+      "How did you prevent SQL injection when users ask natural-language questions through Text-to-SQL?",
+      "How is the cohort retention matrix calculated to accurately account for mid-month subscription upgrades?"
+    ]
   },
   {
     slug: "omnivision-docintel-api",
@@ -555,7 +586,28 @@ export const PROJECTS: CaseStudy[] = [
       "Integrate vision-LLM document parsing for heavily degraded physical paper receipts."
     ],
     githubUrl: "https://github.com/anujmundu/autorecon-enterprise",
-    liveUrl: "https://autorecon-enterprise.streamlit.app/"
+    liveUrl: "https://autorecon-enterprise.streamlit.app/",
+    capstone: true,
+    iterationStory: {
+      v0: "Monolithic CLI Python script with static exact string matching; failed on transposed vendor names or slight invoice number padding.",
+      v1: "Refactored into modular Pydantic v2 data models with Levenshtein token-sort fuzzy logic and automated discrepancy categorization.",
+      v2: "Production Streamlit web platform with automated dispute letter generation across 3 tones, interactive conversational copilot, and multi-format parser pipelines."
+    },
+    tradeOffPostMortem: {
+      constraint: "Parsing corrupted bank PDF statements without OCR latency breaking the interactive UI.",
+      bottleneck: "Pure OCR pipelines took 8+ seconds per page and failed on table column boundaries.",
+      solution: "Implemented a hybrid text-layer extraction fallback with PyPDF + bounding coordinate table heuristic prior to OCR.",
+      outcome: "Parsing speed increased by 5.3x with 0% data drop on digital PDFs and clean error quarantine for scanned sheets."
+    },
+    interviewQuestions: [
+      "Why use Levenshtein token-sort ratio instead of simple Levenshtein distance for vendor matching?",
+      "How do you handle currency conversion differences and penny rounding discrepancies across accounting ledgers?",
+      "How did you structure the 3-tone dispute engine to ensure contractual compliance without alienating vendors?"
+    ],
+    reproducibility: {
+      command: "pytest tests/ -v --durations=5",
+      benchmarkSummary: "100% pass across 5 test suites validating deterministic matcher, fuzzy tolerance, and dispute generation."
+    }
   },
   {
     slug: "omniforge-ai",
@@ -748,7 +800,29 @@ export const PROJECTS: CaseStudy[] = [
       "Integrate automated longitudinal scan comparison to track nodule volume doubling time (VDT)."
     ],
     githubUrl: "https://github.com/anujmundu/lung-nodule-detection",
-    liveUrl: "https://pulmoscan-casp-lung-nodule-detection.streamlit.app/"
+    liveUrl: "https://pulmoscan-casp-lung-nodule-detection.streamlit.app/",
+    capstone: true,
+    iterationStory: {
+      v0: "Standard YOLOv5s baseline on 2D PNG exports; suffered 2.87 false alarms per scan and failed on nodules < 5mm.",
+      v1: "Custom architectural injection of CBAM channel/spatial attention and ASPP dilated convolutions; reduced false positives by 42%.",
+      v2: "Production clinical PACS CADx suite with CoT3 contextual transformer neck, automated Lung-RADS triaging, Grad-CAM interpretability, and live Streamlit workstation."
+    },
+    tradeOffPostMortem: {
+      constraint: "Clinical safety mandate: Missing a malignant nodule is catastrophic, but false alarms cause radiologist alarm fatigue.",
+      bottleneck: "Standard cross-entropy loss biased model predictions toward background parenchyma due to 99.8% negative pixel imbalance.",
+      solution: "Engineered Focal Loss with gamma=2.0 and alpha=0.25 paired with CIoU geometric bounding box penalty.",
+      outcome: "Boosted small-nodule sensitivity to 94.2% while reducing false-positive detections per scan to 1.12."
+    },
+    ergonomicsRationale: "Designed strictly for dark-environment radiology reading rooms: High-contrast monochrome DICOM viewer with non-blinding cyan/amber lesion bounding boxes and 1-click Lung-RADS score export.",
+    interviewQuestions: [
+      "Why did you choose YOLOv5-CASP over 3D U-Net or Mask R-CNN for this clinical screening workflow?",
+      "How did Hounsfield Unit (HU) windowing specifically impact model convergence during DICOM preprocessing?",
+      "How does the CoT3 contextual transformer neck assist in differentiating subpleural nodules from chest wall structures?"
+    ],
+    reproducibility: {
+      command: "python -m pytest tests/test_casp_architecture.py -v",
+      benchmarkSummary: "Validated CIoU loss, CBAM attention gate tensors, and Lung-RADS threshold categorization."
+    }
   },
   {
     slug: "diabetes-prediction-system",

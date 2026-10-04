@@ -38,6 +38,7 @@ type CardTab = "sim" | "arch" | "metrics";
 export function SelectedWork() {
   const [activeFilter, setActiveFilter] = useState<FilterType>("ALL");
   const [liveOnly, setLiveOnly] = useState(false);
+  const [selectedSkillProof, setSelectedSkillProof] = useState<string>("ALL");
   const [activeCardTabs, setActiveCardTabs] = useState<Record<string, CardTab>>({});
 
   const filterTabs: FilterType[] = [
@@ -52,6 +53,10 @@ export function SelectedWork() {
 
   const filteredProjects = PROJECTS.filter((p) => {
     if (liveOnly && !p.liveUrl) return false;
+    if (selectedSkillProof !== "ALL") {
+      const matchSkill = p.tags.some((t) => t.toLowerCase().includes(selectedSkillProof.toLowerCase()));
+      if (!matchSkill) return false;
+    }
     if (activeFilter === "ALL") return true;
     return p.capabilityGroup === activeFilter;
   });
@@ -201,6 +206,23 @@ export function SelectedWork() {
                     {liveCount}
                   </span>
                 </button>
+
+                {/* Proof By Stack Dropdown */}
+                <div className="flex items-center gap-1.5 bg-[#060911] border border-white/[0.08] px-3 py-1.5 rounded-lg text-xs font-mono">
+                  <span className="text-[10px] text-zinc-500 uppercase font-bold">PROOF:</span>
+                  <select
+                    value={selectedSkillProof}
+                    onChange={(e) => setSelectedSkillProof(e.target.value)}
+                    className="bg-transparent text-cyan-300 font-bold focus:outline-none cursor-pointer text-xs uppercase"
+                  >
+                    <option value="ALL" className="bg-[#070a14] text-white">ALL TECH</option>
+                    <option value="PyTorch" className="bg-[#070a14] text-cyan-300">PYTORCH</option>
+                    <option value="FastAPI" className="bg-[#070a14] text-emerald-300">FASTAPI</option>
+                    <option value="Docker" className="bg-[#070a14] text-blue-300">DOCKER</option>
+                    <option value="DuckDB" className="bg-[#070a14] text-amber-300">DUCKDB</option>
+                    <option value="Streamlit" className="bg-[#070a14] text-purple-300">STREAMLIT</option>
+                  </select>
+                </div>
               </div>
 
               <div className="hidden sm:flex items-center gap-2 font-mono text-xs text-zinc-500">
@@ -282,6 +304,12 @@ export function SelectedWork() {
                                 <span className="flex items-center gap-1.5 text-emerald-400 text-[11px] px-2.5 py-0.5 rounded-full bg-emerald-950/40 border border-emerald-500/30 font-semibold">
                                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
                                   PRODUCTION DEPLOYED
+                                </span>
+                              )}
+                              {project.capstone && (
+                                <span className="flex items-center gap-1.5 text-amber-300 text-[10px] px-2.5 py-0.5 rounded-full bg-amber-950/60 border border-amber-400/50 font-bold shadow-[0_0_10px_rgba(245,158,11,0.25)]">
+                                  <ShieldCheck className="w-3 h-3 text-amber-400" />
+                                  <span>FLAGSHIP CAPSTONE</span>
                                 </span>
                               )}
                               <span

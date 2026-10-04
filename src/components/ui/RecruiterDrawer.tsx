@@ -167,6 +167,9 @@ export function RecruiterDrawer({ isOpen, onClose }: RecruiterDrawerProps) {
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [isOpen, onClose]);
 
+  const [copiedPitch, setCopiedPitch] = useState(false);
+  const [copiedQuestionIndex, setCopiedQuestionIndex] = useState<number | null>(null);
+
   const handleCopyEmail = () => {
     navigator.clipboard.writeText(email);
     setCopiedEmail(true);
@@ -174,15 +177,30 @@ export function RecruiterDrawer({ isOpen, onClose }: RecruiterDrawerProps) {
     setTimeout(() => setCopiedEmail(false), 2200);
   };
 
+  const handleCopyPitch = () => {
+    const currentProfile = ROLE_PROFILES[targetRole];
+    navigator.clipboard.writeText(currentProfile.pitch);
+    setCopiedPitch(true);
+    playSuccess();
+    setTimeout(() => setCopiedPitch(false), 2200);
+  };
+
+  const handleCopyQuestion = (questionText: string, idx: number) => {
+    navigator.clipboard.writeText(questionText);
+    setCopiedQuestionIndex(idx);
+    playSuccess();
+    setTimeout(() => setCopiedQuestionIndex(null), 2200);
+  };
+
   const handleCopySlackBlurb = () => {
     const currentProfile = ROLE_PROFILES[targetRole];
-    const blurb = `🚀 Candidate Evaluation: Anuj (AI/ML Engineer · Data Scientist · Data Analyst)
+    const blurb = `🚀 Candidate Evaluation: Anuj (AI/ML Engineer · Systems Architect · Data Scientist)
 • Target Role Match: ${currentProfile.label} (${currentProfile.matchScore}% Verified Fit)
 • Core Production Stack: ${currentProfile.topSkills.slice(0, 5).join(", ")}
-• Proven Benchmarks: Sub-40ms P95 API Latency, 94.8% mAP CADx Vision, 85% Accuracy (0.89 AUC) Attrition Service.
-• Live Deployments: OmniForge Multimodal (Streamlit), CADx Lung Nodule Suite (Streamlit), RetainAI Enterprise (Render)
+• Proven Benchmarks: Sub-40ms P95 API Latency, 94.2% Sensitivity CADx Vision, 419 unit tests passing (anuj-ai-lab), 541k rows in <1.2s DuckDB OLAP.
+• Live Cloud Deployments: 11 active systems running on Streamlit Cloud & Render
 • Availability: Immediately Available · Remote / Hybrid Worldwide
-• Email: ${email} · Portfolio: https://portfolio-anuj.vercel.app`;
+• Email: ${email} · Portfolio: https://anuj-portfolio.dev`;
 
     navigator.clipboard.writeText(blurb);
     setCopiedBlurb(true);
@@ -513,9 +531,27 @@ export function RecruiterDrawer({ isOpen, onClose }: RecruiterDrawerProps) {
                     </span>
                   </div>
 
-                  <p className="text-zinc-300 font-sans text-xs leading-relaxed">
-                    {currentRole.pitch}
-                  </p>
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pt-1">
+                    <p className="text-zinc-300 font-sans text-xs leading-relaxed flex-1">
+                      {currentRole.pitch}
+                    </p>
+                    <button
+                      onClick={handleCopyPitch}
+                      className="shrink-0 flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-cyan-500/10 hover:bg-cyan-500/20 border border-cyan-400/40 text-cyan-300 hover:text-white text-[10px] font-bold font-mono transition-all cursor-pointer shadow-[0_0_10px_rgba(0,229,255,0.15)]"
+                    >
+                      {copiedPitch ? (
+                        <>
+                          <Check className="w-3 h-3 text-emerald-400" />
+                          <span className="text-emerald-400">PITCH COPIED!</span>
+                        </>
+                      ) : (
+                        <>
+                          <Copy className="w-3 h-3" />
+                          <span>COPY ELEVATOR PITCH</span>
+                        </>
+                      )}
+                    </button>
+                  </div>
 
                   <div className="space-y-1 pt-1">
                     <span className="text-[9px] text-zinc-500 uppercase tracking-wider font-bold">VERIFIED CORE STACK:</span>
@@ -636,7 +672,74 @@ export function RecruiterDrawer({ isOpen, onClose }: RecruiterDrawerProps) {
                 </div>
               </div>
 
-              {/* 4. 1-CLICK SLACK / ATS PITCH GENERATOR */}
+              {/* 4. TECHNICAL INTERVIEW CHEAT SHEET */}
+              <div className="space-y-2.5">
+                <div className="flex items-center justify-between text-[10px] text-zinc-400 uppercase tracking-widest font-bold">
+                  <span className="text-purple-400 flex items-center gap-1.5">
+                    <Terminal className="w-3.5 h-3.5 text-purple-400" />
+                    <span>LENS 04 // TECHNICAL INTERVIEW CHEAT SHEET:</span>
+                  </span>
+                  <span className="text-zinc-500 font-mono">CURATED ARCHITECTURE QUESTIONS</span>
+                </div>
+
+                <div className="space-y-2">
+                  {[
+                    {
+                      topic: "Medical Computer Vision (YOLOv5-CASP)",
+                      question: "How did Hounsfield Unit (HU) windowing and CIoU loss resolve class imbalance on sub-centimeter lung nodules?",
+                      source: "PulmoScan CADx Suite"
+                    },
+                    {
+                      topic: "Columnar OLAP vs. Data Warehouses",
+                      question: "Why did you choose an embedded DuckDB columnar engine over serverless warehouses for the PulseMetrics BI dashboard?",
+                      source: "PulseMetrics Copilot"
+                    },
+                    {
+                      topic: "High-Concurrence Reconnaissance",
+                      question: "How did you design the hybrid text-layer heuristic in AutoRecon to parse corrupted statement PDFs without OCR latency spikes?",
+                      source: "AutoRecon Enterprise"
+                    },
+                    {
+                      topic: "Distributed Queues & Worker Meshes",
+                      question: "Why use Celery + Redis rather than FastAPI BackgroundTasks for heavy PyTorch forward passes?",
+                      source: "OmniForge AI"
+                    }
+                  ].map((item, idx) => (
+                    <div
+                      key={idx}
+                      className="p-3 rounded-xl bg-[#080914] border border-white/[0.08] hover:border-purple-500/40 transition-all space-y-1.5"
+                    >
+                      <div className="flex items-center justify-between">
+                        <span className="text-[10px] font-bold text-purple-300 font-mono">{item.topic}</span>
+                        <span className="text-[9px] text-zinc-500">{item.source}</span>
+                      </div>
+                      <p className="text-xs font-sans text-zinc-300 leading-relaxed italic">
+                        "{item.question}"
+                      </p>
+                      <div className="pt-1 flex justify-end">
+                        <button
+                          onClick={() => handleCopyQuestion(item.question, idx)}
+                          className="flex items-center gap-1 px-2 py-0.5 rounded bg-white/[0.04] hover:bg-purple-500/20 text-[9px] text-zinc-400 hover:text-purple-300 transition-colors cursor-pointer border border-white/[0.06]"
+                        >
+                          {copiedQuestionIndex === idx ? (
+                            <>
+                              <Check className="w-2.5 h-2.5 text-emerald-400" />
+                              <span className="text-emerald-400 font-bold">COPIED QUESTION!</span>
+                            </>
+                          ) : (
+                            <>
+                              <Copy className="w-2.5 h-2.5" />
+                              <span>COPY QUESTION FOR INTERVIEW</span>
+                            </>
+                          )}
+                        </button>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* 5. 1-CLICK SLACK / ATS PITCH GENERATOR */}
               <div className="p-4 rounded-xl bg-gradient-to-r from-cyan-950/30 via-[#070f1e] to-purple-950/30 border border-cyan-500/30 space-y-3">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2">

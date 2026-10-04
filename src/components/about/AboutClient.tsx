@@ -43,6 +43,7 @@ import { GithubIcon, LinkedInIcon } from "@/components/ui/Icons";
 import { CardContainer, CardBody, CardItem } from "@/components/aceternity/Card3D";
 import { playClick, playChirp, playSuccess, toggleSound, isSoundEnabled } from "@/lib/audio";
 import AnimatedBackground from "@/components/home/AnimatedBackground";
+import { HybridSkillRadar } from "@/components/about/HybridSkillRadar";
 
 type TerminalTab = "specs" | "academia" | "cli";
 type PhilosophyComparison = "production" | "notebook";
@@ -652,6 +653,11 @@ export function AboutClient() {
               </motion.div>
             )}
           </div>
+        </section>
+
+        {/* Section 2.5: Cross-Discipline Engineering Nexus Radar */}
+        <section className="space-y-4">
+          <HybridSkillRadar />
         </section>
 
         {/* Section 03: Core Engineering Principles & Reality Check Sandbox */}
