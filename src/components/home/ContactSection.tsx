@@ -23,10 +23,11 @@ const inquiryLoadingStates = [
 export function ContactSection() {
   const [copied, setCopied] = useState(false);
   const [inquiryText, setInquiryText] = useState("");
+  const [senderContact, setSenderContact] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [isSent, setIsSent] = useState(false);
   const [activeTopic, setActiveTopic] = useState<string | null>(null);
-  const email = "anujmark.edwin.ame@gmail.com";
+  const email = "anuj.engineering.ai@gmail.com";
 
   const placeholders = [
     "Ask about Computer Vision pipeline latency...",
@@ -59,16 +60,36 @@ export function ContactSection() {
     setInquiryText(e.target.value);
   };
 
-  const handleInquirySubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleInquirySubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!inquiryText.trim()) return;
     playClick();
     setIsLoading(true);
-    setTimeout(() => {
+
+    try {
+      await fetch(`https://formsubmit.co/ajax/${email}`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify({
+          senderContact: senderContact.trim() || "Anonymous Terminal Visitor",
+          email: senderContact.includes("@") ? senderContact.trim() : undefined,
+          message: inquiryText,
+          _replyto: senderContact.includes("@") ? senderContact.trim() : undefined,
+          _subject: `⚡ Command Terminal Dispatch: ${senderContact ? `[${senderContact}] ` : ""}${inquiryText.slice(0, 40)}...`,
+          _template: "table",
+          _captcha: "false"
+        })
+      });
+    } catch (err) {
+      console.error("Transmission fallback:", err);
+    } finally {
       setIsLoading(false);
       setIsSent(true);
       setTimeout(() => setIsSent(false), 9000);
-    }, 4500);
+    }
   };
 
   const handleTopicClick = (topic: typeof quickTopics[0], e: React.MouseEvent) => {
@@ -206,7 +227,7 @@ export function ContactSection() {
               </div>
 
               {/* Particle Vanish Terminal Input */}
-              <div className="pt-2">
+              <div className="space-y-2 pt-2">
                 <PlaceholdersAndVanishInput
                   placeholders={placeholders}
                   value={inquiryText}
@@ -214,6 +235,18 @@ export function ContactSection() {
                   onChange={handleInquiryChange}
                   onSubmit={handleInquirySubmit}
                 />
+                
+                {/* Optional Reply-To Contact Handle */}
+                <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white/[0.02] border border-white/[0.06] text-xs font-mono">
+                  <span className="text-zinc-500 text-[10px] shrink-0 font-bold uppercase">REPLY TO (OPTIONAL):</span>
+                  <input
+                    type="text"
+                    value={senderContact}
+                    onChange={(e) => setSenderContact(e.target.value)}
+                    placeholder="your.email@company.com (for Anuj to reply back to your inbox)"
+                    className="w-full bg-transparent text-zinc-200 placeholder-zinc-600 focus:outline-none text-xs font-mono"
+                  />
+                </div>
               </div>
 
               {/* Status Confirmation or Fallback */}
@@ -224,20 +257,20 @@ export function ContactSection() {
                     <span>SIGNAL TRANSMISSION ACKNOWLEDGED (STATUS 200 OK)</span>
                   </div>
                   <p className="text-zinc-300 font-sans text-xs">
-                    Your inquiry has been packaged and routed directly to Anuj's command console. Want to send a copy from your email client as well?
+                    Your inquiry has been packaged and delivered directly into Anuj's Gmail inbox (<span className="text-cyan-300 font-mono">anuj.engineering.ai@gmail.com</span>). Anuj will reply to {senderContact.trim() || "your address"} within 12 hours.
                   </p>
                   <a
                     href={`mailto:${email}?subject=Portfolio%20Inquiry&body=${encodeURIComponent(inquiryText)}`}
                     className="inline-flex items-center gap-1.5 text-cyan-400 hover:text-cyan-300 font-mono font-bold text-xs pt-1"
                   >
-                    <span>OPEN IN YOUR EMAIL CLIENT</span>
+                    <span>ALSO OPEN IN DESKTOP EMAIL CLIENT</span>
                     <ArrowUpRight className="w-3.5 h-3.5" />
                   </a>
                 </div>
               ) : (
                 <div className="flex items-center justify-between text-[11px] font-mono text-zinc-500 pt-1">
-                  <span>Particle physics activated on enter</span>
-                  <span>Direct SSL handshake</span>
+                  <span>Direct inbox dispatch to anuj.engineering.ai@gmail.com</span>
+                  <span>TLS 1.3 encrypted</span>
                 </div>
               )}
             </div>

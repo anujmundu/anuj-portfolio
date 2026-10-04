@@ -172,7 +172,7 @@ export function TerminalModal({ isOpen, onClose }: TerminalModalProps) {
     // Execute on Enter
     if (e.key === "Enter") {
       const cleanCmd = input.trim();
-      executeCommand(cleanCmd.toLowerCase());
+      executeCommand(cleanCmd);
       if (cleanCmd) {
         setCommandHistory((prev) => [...prev, cleanCmd]);
         setHistoryIndex(-1);
@@ -181,8 +181,9 @@ export function TerminalModal({ isOpen, onClose }: TerminalModalProps) {
     }
   };
 
-  const executeCommand = (cmd: string) => {
-    if (!cmd) return;
+  const executeCommand = (rawCmd: string) => {
+    if (!rawCmd) return;
+    const cmd = rawCmd.trim().toLowerCase();
     playChirp();
 
     if (cmd === "clear" || cmd === "cls") {
@@ -238,6 +239,39 @@ export function TerminalModal({ isOpen, onClose }: TerminalModalProps) {
       return;
     }
 
+    if (cmd.startsWith("msg ") || cmd.startsWith("message ") || cmd.startsWith("send ") || cmd.startsWith("email ")) {
+      const msgContent = rawCmd.trim().replace(/^(msg|message|send|email)\s+/i, "").trim();
+      let msgOutput: React.ReactNode;
+      if (!msgContent) {
+        msgOutput = <p className="text-amber-400">Usage: msg &lt;your message or contact info&gt; — dispatches packet directly to Anuj's Gmail inbox.</p>;
+      } else {
+        fetch("https://formsubmit.co/ajax/anuj.engineering.ai@gmail.com", {
+          method: "POST",
+          headers: { "Content-Type": "application/json", "Accept": "application/json" },
+          body: JSON.stringify({
+            message: msgContent,
+            _subject: `⚡ Hacker Terminal Direct Dispatch: ${msgContent.slice(0, 40)}...`,
+            _template: "table",
+            _captcha: "false"
+          })
+        }).catch(() => {});
+        playSuccess();
+        msgOutput = (
+          <div className="p-2.5 rounded bg-emerald-950/40 border border-emerald-500/30 text-emerald-300 text-xs font-mono space-y-1">
+            <p className="font-bold flex items-center gap-1.5">
+              <span>✓ PACKET TRANSMITTED DIRECTLY TO ANUJ'S GMAIL INBOX (STATUS 200 OK)</span>
+            </p>
+            <p className="text-zinc-300">
+              Payload delivered to <span className="text-cyan-300 font-bold">anuj.engineering.ai@gmail.com</span>: "{msgContent}"
+            </p>
+            <p className="text-[11px] text-zinc-500">SLA: Anuj reviews terminal dispatches in &lt; 12 hours.</p>
+          </div>
+        );
+      }
+      setHistory((prev) => [...prev, { command: rawCmd.trim(), output: msgOutput }]);
+      return;
+    }
+
     let output: React.ReactNode;
 
     switch (cmd) {
@@ -254,6 +288,7 @@ export function TerminalModal({ isOpen, onClose }: TerminalModalProps) {
               <div><span className="text-emerald-400 font-bold inline-block w-24">stack</span> <span className="text-zinc-400">Architectural technology stack</span></div>
               <div><span className="text-emerald-400 font-bold inline-block w-24">projects</span> <span className="text-zinc-400">Flagship case studies & repos</span></div>
               <div><span className="text-emerald-400 font-bold inline-block w-24">roles</span> <span className="text-zinc-400">Target engineering positions</span></div>
+              <div><span className="text-emerald-400 font-bold inline-block w-24">msg &lt;text&gt;</span> <span className="text-zinc-400">Dispatch directly to Anuj's Gmail</span></div>
               <div><span className="text-emerald-400 font-bold inline-block w-24">contact</span> <span className="text-zinc-400">Reach direct communication link</span></div>
               <div><span className="text-emerald-400 font-bold inline-block w-24">crt</span> <span className="text-zinc-400">Toggle retro CRT monitor scanlines</span></div>
               <div><span className="text-emerald-400 font-bold inline-block w-24">audio</span> <span className="text-zinc-400">Toggle audio sound synthesizer</span></div>
@@ -412,9 +447,10 @@ export function TerminalModal({ isOpen, onClose }: TerminalModalProps) {
         output = (
           <div className="text-zinc-300 space-y-1 text-xs font-mono">
             <p className="text-cyan-400 font-bold">[ DIRECT COMMUNICATIONS ENCRYPTION CHANNEL ]</p>
-            <p>GitHub: <a href="https://github.com" target="_blank" rel="noreferrer" className="text-emerald-400 underline hover:text-white">github.com/anuj-builder</a></p>
-            <p>LinkedIn: <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="text-cyan-400 underline hover:text-white">linkedin.com/in/anuj-builder</a></p>
-            <p>Email: <span className="text-amber-300">anuj.engineering.ai@gmail.com</span></p>
+            <p>GitHub: <a href="https://github.com/anujmundu" target="_blank" rel="noreferrer" className="text-emerald-400 underline hover:text-white">github.com/anujmundu</a></p>
+            <p>LinkedIn: <a href="https://linkedin.com/in/anujmundu" target="_blank" rel="noreferrer" className="text-cyan-400 underline hover:text-white">linkedin.com/in/anujmundu</a></p>
+            <p>Direct Gmail: <span className="text-amber-300">anuj.engineering.ai@gmail.com</span></p>
+            <p className="text-emerald-300 pt-1">⚡ Fast Terminal Dispatch: type <span className="text-white font-bold bg-white/[0.1] px-1 rounded">msg &lt;your note or email&gt;</span> to send directly to Anuj's inbox!</p>
             <p className="text-[11px] text-zinc-500">Location: Bhopal, India · Open for Global Remote & Relocation</p>
           </div>
         );

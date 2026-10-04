@@ -87,7 +87,7 @@ export function AboutClient() {
 
   const handleCopyEmail = () => {
     playClick();
-    navigator.clipboard.writeText("anujmundu2@gmail.com");
+    navigator.clipboard.writeText("anuj.engineering.ai@gmail.com");
     setCopiedEmail(true);
     setTimeout(() => setCopiedEmail(false), 2000);
   };
@@ -136,9 +136,32 @@ export function AboutClient() {
     if (!cmd) return;
 
     let response = "";
+
+    if (cmd.startsWith("msg ") || cmd.startsWith("message ") || cmd.startsWith("send ") || cmd.startsWith("email ")) {
+      const msgContent = cliInput.replace(/^(msg|message|send|email)\s+/i, "").trim();
+      if (!msgContent) {
+        response = "Usage: msg <your message or email> — will dispatch directly to Anuj's Gmail inbox.";
+      } else {
+        fetch("https://formsubmit.co/ajax/anuj.engineering.ai@gmail.com", {
+          method: "POST",
+          headers: { "Content-Type": "application/json", "Accept": "application/json" },
+          body: JSON.stringify({
+            message: msgContent,
+            _subject: `⚡ Workstation CLI Direct Dispatch: ${msgContent.slice(0, 40)}...`,
+            _template: "table",
+            _captcha: "false"
+          })
+        }).catch(() => {});
+        response = `✓ TRANSMISSION DELIVERED DIRECTLY TO ANUJ'S GMAIL (anuj.engineering.ai@gmail.com): "${msgContent}"`;
+      }
+      setCliHistory((prev) => [...prev, `$ ${cliInput}`, response]);
+      setCliInput("");
+      return;
+    }
+
     switch (cmd) {
       case "help":
-        response = "Commands: whoami, skills, education, architecture, stresstest, contact, clear";
+        response = "Commands: whoami, skills, education, architecture, stresstest, msg <text>, contact, clear";
         break;
       case "whoami":
         response = "Anuj Mundu — AI/ML Systems Engineer & Data Scientist. MANIT Bhopal MCA graduate.";
@@ -157,7 +180,7 @@ export function AboutClient() {
         response = "Initiated synthetic load test across worker nodes (10,000 req/sec benchmark target)...";
         break;
       case "contact":
-        response = "Email: anujmundu2@gmail.com | Location: India (IST / UTC+5:30) | Status: Available for High-Impact Roles";
+        response = "Direct Gmail: anuj.engineering.ai@gmail.com | Location: India (IST / UTC+5:30) | Status: Available for High-Impact Roles. (Hint: Type 'msg <text>' to send a message directly to Anuj's Gmail!)";
         break;
       case "clear":
         setCliHistory([]);

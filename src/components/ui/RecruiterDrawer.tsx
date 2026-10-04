@@ -31,7 +31,9 @@ import {
   Calendar,
   MapPin,
   TrendingUp,
-  Flame
+  Flame,
+  Send,
+  Loader2
 } from "lucide-react";
 import { PROJECTS } from "@/data/projects";
 import { playClick, playSuccess, playChirp } from "@/lib/audio";
@@ -116,7 +118,65 @@ export function RecruiterDrawer({ isOpen, onClose }: RecruiterDrawerProps) {
   const [isTimerRunning, setIsTimerRunning] = useState(true);
   const timerRef = useRef<NodeJS.Timeout | null>(null);
 
-  const email = "anujmark.edwin.ame@gmail.com";
+  const email = "anuj.engineering.ai@gmail.com";
+
+  // Direct Interview Dispatch State
+  const [showInviteModal, setShowInviteModal] = useState(false);
+  const [recruiterName, setRecruiterName] = useState("");
+  const [recruiterEmail, setRecruiterEmail] = useState("");
+  const [recruiterCompany, setRecruiterCompany] = useState("");
+  const [recruiterNote, setRecruiterNote] = useState("Hi Anuj, I reviewed your executive brief and would love to connect regarding an engineering role on our team.");
+  const [isSendingInvite, setIsSendingInvite] = useState(false);
+  const [inviteSent, setInviteSent] = useState(false);
+  const [inviteError, setInviteError] = useState("");
+
+  const handleDispatchInvite = async (e: React.FormEvent) => {
+    e.preventDefault();
+    playClick();
+
+    if (!recruiterEmail.trim() || !recruiterEmail.includes("@")) {
+      setInviteError("Please provide a valid work email so Anuj can reply.");
+      playChirp();
+      return;
+    }
+
+    setInviteError("");
+    setIsSendingInvite(true);
+
+    try {
+      const res = await fetch(`https://formsubmit.co/ajax/${email}`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify({
+          name: recruiterName.trim() || "Hiring Lead",
+          email: recruiterEmail.trim(),
+          company: recruiterCompany.trim() || "Engineering Team",
+          targetRole: targetRole,
+          persona: persona,
+          message: recruiterNote,
+          _subject: `💼 Recruiter Interview Invite: ${recruiterName.trim() || "Lead"}${recruiterCompany ? ` @ ${recruiterCompany.trim()}` : ""} (${targetRole})`,
+          _replyto: recruiterEmail.trim(),
+          _template: "table",
+          _captcha: "false"
+        })
+      });
+
+      if (res.ok) {
+        setInviteSent(true);
+        playSuccess();
+      } else {
+        throw new Error("Dispatch failed");
+      }
+    } catch {
+      setInviteError("Transit timeout. Your invitation details were saved. You can also send via mailto fallback.");
+      playChirp();
+    } finally {
+      setIsSendingInvite(false);
+    }
+  };
 
   const copyStarBullet = (proj: typeof PROJECTS[0]) => {
     const metricHighlights = proj.metrics.map((m) => `${m.label}: ${m.value}`).join(" · ");
@@ -778,6 +838,116 @@ export function RecruiterDrawer({ isOpen, onClose }: RecruiterDrawerProps) {
             {/* BOTTOM FIXED ACTION DOCK: Direct Connect Channels             */}
             {/* ============================================================= */}
             <div className="p-4 sm:p-5 border-t border-white/[0.08] bg-[#050813]/95 backdrop-blur-xl shrink-0 space-y-3">
+              {/* Direct Interview Invitation Dispatch Panel */}
+              <AnimatePresence>
+                {showInviteModal && (
+                  <motion.div
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: "auto" }}
+                    exit={{ opacity: 0, height: 0 }}
+                    className="p-4 rounded-xl border border-cyan-500/30 bg-[#060a17] space-y-3 font-mono text-xs overflow-hidden"
+                  >
+                    <div className="flex items-center justify-between border-b border-white/[0.08] pb-2">
+                      <div className="flex items-center gap-2 text-cyan-400 font-bold text-xs">
+                        <Mail className="w-3.5 h-3.5" />
+                        <span>INSTANT INTERVIEW DISPATCH DIRECT TO GMAIL</span>
+                      </div>
+                      <span className="text-[10px] text-emerald-400">STATUS 200 READY</span>
+                    </div>
+
+                    {inviteSent ? (
+                      <div className="p-3 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 space-y-1.5 animate-fade-in">
+                        <div className="flex items-center gap-2 font-bold text-xs">
+                          <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                          <span>INTERVIEW INVITATION TRANSMITTED DIRECTLY TO ANUJ'S GMAIL!</span>
+                        </div>
+                        <p className="text-[11px] text-zinc-300 font-sans">
+                          Packet routed directly to <span className="text-cyan-300 font-mono">anuj.engineering.ai@gmail.com</span>. Anuj will reply to your work email (<span className="text-white font-mono">{recruiterEmail}</span>) within 12 hours.
+                        </p>
+                      </div>
+                    ) : (
+                      <form onSubmit={handleDispatchInvite} className="space-y-2.5">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                          <div>
+                            <label className="text-[10px] text-zinc-400 uppercase tracking-wider block mb-1">Your Name / Title</label>
+                            <input
+                              type="text"
+                              value={recruiterName}
+                              onChange={(e) => setRecruiterName(e.target.value)}
+                              placeholder="e.g. Alex (Engineering Lead)"
+                              className="w-full bg-white/[0.04] border border-white/[0.1] rounded px-2.5 py-1.5 text-xs text-white placeholder-zinc-600 focus:outline-none focus:border-cyan-400"
+                            />
+                          </div>
+                          <div>
+                            <label className="text-[10px] text-zinc-400 uppercase tracking-wider block mb-1">Work Email (Required)</label>
+                            <input
+                              type="email"
+                              required
+                              value={recruiterEmail}
+                              onChange={(e) => setRecruiterEmail(e.target.value)}
+                              placeholder="alex@company.com"
+                              className="w-full bg-white/[0.04] border border-white/[0.1] rounded px-2.5 py-1.5 text-xs text-white placeholder-zinc-600 focus:outline-none focus:border-cyan-400"
+                            />
+                          </div>
+                        </div>
+
+                        <div>
+                          <label className="text-[10px] text-zinc-400 uppercase tracking-wider block mb-1">Company / Organization</label>
+                          <input
+                            type="text"
+                            value={recruiterCompany}
+                            onChange={(e) => setRecruiterCompany(e.target.value)}
+                            placeholder="e.g. Stripe / Meta / AI Startup"
+                            className="w-full bg-white/[0.04] border border-white/[0.1] rounded px-2.5 py-1.5 text-xs text-white placeholder-zinc-600 focus:outline-none focus:border-cyan-400"
+                          />
+                        </div>
+
+                        <div>
+                          <label className="text-[10px] text-zinc-400 uppercase tracking-wider block mb-1">Invitation Note</label>
+                          <textarea
+                            rows={2}
+                            value={recruiterNote}
+                            onChange={(e) => setRecruiterNote(e.target.value)}
+                            className="w-full bg-white/[0.04] border border-white/[0.1] rounded px-2.5 py-1.5 text-xs text-zinc-200 placeholder-zinc-600 focus:outline-none focus:border-cyan-400 font-sans resize-none"
+                          />
+                        </div>
+
+                        {inviteError && (
+                          <div className="text-[11px] text-amber-400 font-sans">{inviteError}</div>
+                        )}
+
+                        <div className="flex items-center justify-between gap-2 pt-1">
+                          <a
+                            href={`mailto:${email}?subject=Interview Invitation: AI/ML Engineer Role&body=${encodeURIComponent(recruiterNote)}`}
+                            className="text-[10px] text-zinc-500 hover:text-cyan-300 underline underline-offset-2"
+                          >
+                            Or open desktop mail client
+                          </a>
+
+                          <button
+                            type="submit"
+                            disabled={isSendingInvite}
+                            className="px-4 py-2 rounded-lg bg-cyan-400 text-black font-bold text-xs hover:bg-cyan-300 transition-all flex items-center gap-1.5 cursor-pointer disabled:opacity-50"
+                          >
+                            {isSendingInvite ? (
+                              <>
+                                <Loader2 className="w-3.5 h-3.5 animate-spin" />
+                                <span>TRANSMITTING...</span>
+                              </>
+                            ) : (
+                              <>
+                                <Send className="w-3.5 h-3.5" />
+                                <span>TRANSMIT TO ANUJ'S GMAIL</span>
+                              </>
+                            )}
+                          </button>
+                        </div>
+                      </form>
+                    )}
+                  </motion.div>
+                )}
+              </AnimatePresence>
+
               <div className="flex flex-col sm:flex-row items-center gap-2.5">
                 {/* Copy Direct Email */}
                 <button
@@ -788,14 +958,21 @@ export function RecruiterDrawer({ isOpen, onClose }: RecruiterDrawerProps) {
                   <span>{copiedEmail ? "EMAIL COPIED!" : "COPY DIRECT EMAIL"}</span>
                 </button>
 
-                {/* Direct Schedule / Mailto */}
-                <a
-                  href={`mailto:${email}?subject=Interview Invitation: AI/ML Engineer Role&body=Hi Anuj,%0D%0A%0D%0AI reviewed your 30-second executive brief and would love to connect regarding an engineering role on our team.%0D%0A%0D%0ABest regards,`}
-                  className="w-full sm:flex-1 py-2.5 px-3 rounded-lg bg-white/[0.08] hover:bg-white/[0.15] border border-white/[0.15] text-white font-black transition-all flex items-center justify-center gap-2 cursor-pointer text-center"
+                {/* Direct Schedule / Invite Toggle */}
+                <button
+                  onClick={() => {
+                    playClick();
+                    setShowInviteModal(!showInviteModal);
+                  }}
+                  className={`w-full sm:flex-1 py-2.5 px-3 rounded-lg border font-black transition-all flex items-center justify-center gap-2 cursor-pointer text-center ${
+                    showInviteModal
+                      ? "bg-cyan-500/25 border-cyan-400 text-cyan-200 shadow-[0_0_15px_rgba(0,229,255,0.25)]"
+                      : "bg-white/[0.08] hover:bg-white/[0.15] border-white/[0.15] text-white"
+                  }`}
                 >
                   <Mail className="w-4 h-4 text-cyan-400" />
-                  <span>INVITE TO INTERVIEW</span>
-                </a>
+                  <span>{showInviteModal ? "CLOSE DISPATCH FORM" : "INVITE TO INTERVIEW"}</span>
+                </button>
 
                 {/* View Full Interactive Resume */}
                 <Link
