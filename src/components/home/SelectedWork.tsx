@@ -37,6 +37,7 @@ type CardTab = "sim" | "arch" | "metrics";
 
 export function SelectedWork() {
   const [activeFilter, setActiveFilter] = useState<FilterType>("ALL");
+  const [liveOnly, setLiveOnly] = useState(false);
   const [activeCardTabs, setActiveCardTabs] = useState<Record<string, CardTab>>({});
 
   const filterTabs: FilterType[] = [
@@ -47,7 +48,10 @@ export function SelectedWork() {
     "ENGINEERING"
   ];
 
+  const liveCount = PROJECTS.filter((p) => Boolean(p.liveUrl)).length;
+
   const filteredProjects = PROJECTS.filter((p) => {
+    if (liveOnly && !p.liveUrl) return false;
     if (activeFilter === "ALL") return true;
     return p.capabilityGroup === activeFilter;
   });
@@ -139,13 +143,13 @@ export function SelectedWork() {
 
             {/* Filter Navigation Tabs */}
             <div className="flex flex-wrap items-center justify-between gap-4 pt-2">
-              <div className="flex flex-wrap gap-2 font-mono text-xs">
+              <div className="flex flex-wrap items-center gap-2 font-mono text-xs">
                 {filterTabs.map((tab) => {
                   const isSelected = activeFilter === tab;
                   const count =
                     tab === "ALL"
-                      ? PROJECTS.length
-                      : PROJECTS.filter((p) => p.capabilityGroup === tab).length;
+                      ? (liveOnly ? liveCount : PROJECTS.length)
+                      : PROJECTS.filter((p) => (!liveOnly || Boolean(p.liveUrl)) && p.capabilityGroup === tab).length;
 
                   return (
                     <button
@@ -171,11 +175,40 @@ export function SelectedWork() {
                     </button>
                   );
                 })}
+
+                {/* 1-Click Live Apps Only Toggle */}
+                <button
+                  onClick={() => setLiveOnly(!liveOnly)}
+                  className={`flex items-center gap-2 px-3.5 py-2 rounded-lg border font-mono text-xs transition-all cursor-pointer ${
+                    liveOnly
+                      ? "bg-emerald-950/80 border-emerald-400 text-emerald-300 shadow-[0_0_16px_rgba(16,185,129,0.4)] scale-[1.02]"
+                      : "bg-[#060911] hover:bg-emerald-950/30 border-white/[0.08] hover:border-emerald-500/40 text-zinc-400 hover:text-emerald-300"
+                  }`}
+                  data-cursor="button"
+                >
+                  <span className="relative flex h-2 w-2">
+                    {liveOnly && (
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                    )}
+                    <span
+                      className={`relative inline-flex rounded-full h-2 w-2 ${
+                        liveOnly ? "bg-emerald-400 shadow-[0_0_8px_#10b981]" : "bg-zinc-600"
+                      }`}
+                    ></span>
+                  </span>
+                  <span className="font-bold tracking-wider">LIVE CLOUD APPS ONLY</span>
+                  <span className="text-[10px] px-1.5 py-0.2 rounded-full font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
+                    {liveCount}
+                  </span>
+                </button>
               </div>
 
               <div className="hidden sm:flex items-center gap-2 font-mono text-xs text-zinc-500">
                 <span>ACTIVE FILTER:</span>
                 <span className="text-cyan-400 font-bold uppercase">{activeFilter}</span>
+                {liveOnly && (
+                  <span className="text-emerald-400 font-bold uppercase">[LIVE ONLY]</span>
+                )}
                 <span>({filteredProjects.length} AVAILABLE)</span>
               </div>
             </div>

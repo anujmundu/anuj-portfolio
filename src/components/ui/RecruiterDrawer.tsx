@@ -107,6 +107,7 @@ const ROLE_PROFILES: Record<TargetRole, {
 export function RecruiterDrawer({ isOpen, onClose }: RecruiterDrawerProps) {
   const [copiedEmail, setCopiedEmail] = useState(false);
   const [copiedBlurb, setCopiedBlurb] = useState(false);
+  const [copiedStarSlug, setCopiedStarSlug] = useState<string | null>(null);
   const [persona, setPersona] = useState<PersonaMode>("RECRUITER");
   const [targetRole, setTargetRole] = useState<TargetRole>("AIML");
   
@@ -116,6 +117,15 @@ export function RecruiterDrawer({ isOpen, onClose }: RecruiterDrawerProps) {
   const timerRef = useRef<NodeJS.Timeout | null>(null);
 
   const email = "anujmark.edwin.ame@gmail.com";
+
+  const copyStarBullet = (proj: typeof PROJECTS[0]) => {
+    const metricHighlights = proj.metrics.map((m) => `${m.label}: ${m.value}`).join(" · ");
+    const bullet = `• Architected ${proj.title}: ${proj.shortDescription} Key achievements: ${metricHighlights}. Technologies: ${proj.tags.slice(0, 6).join(", ")}. Deployed live at ${proj.liveUrl || proj.githubUrl}.`;
+    navigator.clipboard.writeText(bullet);
+    setCopiedStarSlug(proj.slug);
+    playSuccess();
+    setTimeout(() => setCopiedStarSlug(null), 2500);
+  };
 
   // Reset timer when drawer opens
   useEffect(() => {
@@ -597,6 +607,28 @@ export function RecruiterDrawer({ isOpen, onClose }: RecruiterDrawerProps) {
                               <span className="text-cyan-300 font-bold truncate block">{m.value}</span>
                             </div>
                           ))}
+                        </div>
+
+                        {/* 1-Click STAR Bullet Copy for Recruiters */}
+                        <div className="flex items-center justify-between pt-1 text-[9px] border-t border-white/[0.04]">
+                          <span className="text-zinc-500 font-mono text-[8px]">RESUME / ATS BULLET:</span>
+                          <button
+                            onClick={() => copyStarBullet(p)}
+                            className="flex items-center gap-1 px-2 py-0.5 rounded bg-white/[0.04] hover:bg-cyan-500/20 text-zinc-400 hover:text-cyan-300 border border-white/[0.08] hover:border-cyan-500/40 text-[9px] font-mono transition-all cursor-pointer"
+                            title="Copy pre-formatted STAR bullet for candidate notes"
+                          >
+                            {copiedStarSlug === p.slug ? (
+                              <>
+                                <Check className="w-2.5 h-2.5 text-emerald-400" />
+                                <span className="text-emerald-400 font-bold">COPIED!</span>
+                              </>
+                            ) : (
+                              <>
+                                <Copy className="w-2.5 h-2.5" />
+                                <span>COPY STAR BULLET</span>
+                              </>
+                            )}
+                          </button>
                         </div>
                       </div>
                     );
