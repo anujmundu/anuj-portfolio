@@ -9,7 +9,6 @@ import { TerminalModal } from "@/components/lab/TerminalModal";
 import { RecruiterDrawer } from "@/components/ui/RecruiterDrawer";
 
 import { FloatingDock } from "@/components/animaster/FloatingDock";
-import { Notch } from "@/components/aceternity/Notch";
 import { ShaderCanvas } from "@/components/ui/ShaderCanvas";
 import { PageTransition } from "@/components/layout/PageTransition";
 import { ScrollProgressLaser } from "@/components/ui/ScrollProgressLaser";
@@ -35,7 +34,6 @@ export function AppShell({ children }: AppShellProps) {
       <ScrollProgressLaser />
       <CustomCursor />
       <ShaderCanvas opacity={0.25} />
-      <Notch onOpenRecruiter={() => setRecruiterOpen(true)} />
       <Navbar
         onOpenTerminal={() => setTerminalOpen(true)}
         onOpenRecruiter={() => setRecruiterOpen(true)}
