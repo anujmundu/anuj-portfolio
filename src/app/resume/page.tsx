@@ -11,7 +11,7 @@ import { GithubIcon, LinkedinIcon } from "@/components/ui/Icons";
 
 export default function ResumePage() {
   const [copied, setCopied] = React.useState(false);
-  const email = "anuj.engineering.ai@gmail.com";
+  const email = "anujmark.edwin.ame@gmail.com";
 
   const handleCopyEmail = () => {
     navigator.clipboard.writeText(email);
@@ -72,7 +72,7 @@ export default function ResumePage() {
             </div>
 
             <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-zinc-400 print:text-zinc-700 pt-1">
-              <span>anuj.engineering.ai@gmail.com</span>
+              <span>anujmark.edwin.ame@gmail.com</span>
               <span>•</span>
               <span>Bhopal, India (Open to Remote / Relocation)</span>
               <span>•</span>

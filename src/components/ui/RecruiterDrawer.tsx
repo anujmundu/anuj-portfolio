@@ -118,7 +118,7 @@ export function RecruiterDrawer({ isOpen, onClose }: RecruiterDrawerProps) {
   const [isTimerRunning, setIsTimerRunning] = useState(true);
   const timerRef = useRef<NodeJS.Timeout | null>(null);
 
-  const email = "anuj.engineering.ai@gmail.com";
+  const email = "anujmark.edwin.ame@gmail.com";
 
   // Direct Interview Dispatch State
   const [showInviteModal, setShowInviteModal] = useState(false);
@@ -862,7 +862,7 @@ export function RecruiterDrawer({ isOpen, onClose }: RecruiterDrawerProps) {
                           <span>INTERVIEW INVITATION TRANSMITTED DIRECTLY TO ANUJ'S GMAIL!</span>
                         </div>
                         <p className="text-[11px] text-zinc-300 font-sans">
-                          Packet routed directly to <span className="text-cyan-300 font-mono">anuj.engineering.ai@gmail.com</span>. Anuj will reply to your work email (<span className="text-white font-mono">{recruiterEmail}</span>) within 12 hours.
+                          Packet routed directly to <span className="text-cyan-300 font-mono">anujmark.edwin.ame@gmail.com</span>. Anuj will reply to your work email (<span className="text-white font-mono">{recruiterEmail}</span>) within 12 hours.
                         </p>
                       </div>
                     ) : (

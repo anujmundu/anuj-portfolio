@@ -14,7 +14,7 @@ export function QuickContactTerminal() {
   const [copied, setCopied] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
 
-  const targetEmail = "anuj.engineering.ai@gmail.com";
+  const targetEmail = "anujmark.edwin.ame@gmail.com";
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();

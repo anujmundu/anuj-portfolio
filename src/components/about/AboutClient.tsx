@@ -87,7 +87,7 @@ export function AboutClient() {
 
   const handleCopyEmail = () => {
     playClick();
-    navigator.clipboard.writeText("anuj.engineering.ai@gmail.com");
+    navigator.clipboard.writeText("anujmark.edwin.ame@gmail.com");
     setCopiedEmail(true);
     setTimeout(() => setCopiedEmail(false), 2000);
   };
@@ -142,7 +142,7 @@ export function AboutClient() {
       if (!msgContent) {
         response = "Usage: msg <your message or email> — will dispatch directly to Anuj's Gmail inbox.";
       } else {
-        fetch("https://formsubmit.co/ajax/anuj.engineering.ai@gmail.com", {
+        fetch("https://formsubmit.co/ajax/anujmark.edwin.ame@gmail.com", {
           method: "POST",
           headers: { "Content-Type": "application/json", "Accept": "application/json" },
           body: JSON.stringify({
@@ -152,7 +152,7 @@ export function AboutClient() {
             _captcha: "false"
           })
         }).catch(() => {});
-        response = `✓ TRANSMISSION DELIVERED DIRECTLY TO ANUJ'S GMAIL (anuj.engineering.ai@gmail.com): "${msgContent}"`;
+        response = `✓ TRANSMISSION DELIVERED DIRECTLY TO ANUJ'S GMAIL (anujmark.edwin.ame@gmail.com): "${msgContent}"`;
       }
       setCliHistory((prev) => [...prev, `$ ${cliInput}`, response]);
       setCliInput("");
@@ -180,7 +180,7 @@ export function AboutClient() {
         response = "Initiated synthetic load test across worker nodes (10,000 req/sec benchmark target)...";
         break;
       case "contact":
-        response = "Direct Gmail: anuj.engineering.ai@gmail.com | Location: India (IST / UTC+5:30) | Status: Available for High-Impact Roles. (Hint: Type 'msg <text>' to send a message directly to Anuj's Gmail!)";
+        response = "Direct Gmail: anujmark.edwin.ame@gmail.com | Location: India (IST / UTC+5:30) | Status: Available for High-Impact Roles. (Hint: Type 'msg <text>' to send a message directly to Anuj's Gmail!)";
         break;
       case "clear":
         setCliHistory([]);

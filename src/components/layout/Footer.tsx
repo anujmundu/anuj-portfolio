@@ -75,7 +75,7 @@ export function Footer() {
               <span>LINKEDIN</span>
             </a>
             <a
-              href="mailto:anuj.engineering.ai@gmail.com"
+              href="mailto:anujmark.edwin.ame@gmail.com"
               className="flex items-center gap-1.5 hover:text-cyan-400 transition-colors"
               data-cursor="button"
             >

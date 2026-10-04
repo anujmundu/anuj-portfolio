@@ -245,7 +245,7 @@ export function TerminalModal({ isOpen, onClose }: TerminalModalProps) {
       if (!msgContent) {
         msgOutput = <p className="text-amber-400">Usage: msg &lt;your message or contact info&gt; — dispatches packet directly to Anuj's Gmail inbox.</p>;
       } else {
-        fetch("https://formsubmit.co/ajax/anuj.engineering.ai@gmail.com", {
+        fetch("https://formsubmit.co/ajax/anujmark.edwin.ame@gmail.com", {
           method: "POST",
           headers: { "Content-Type": "application/json", "Accept": "application/json" },
           body: JSON.stringify({
@@ -262,7 +262,7 @@ export function TerminalModal({ isOpen, onClose }: TerminalModalProps) {
               <span>✓ PACKET TRANSMITTED DIRECTLY TO ANUJ'S GMAIL INBOX (STATUS 200 OK)</span>
             </p>
             <p className="text-zinc-300">
-              Payload delivered to <span className="text-cyan-300 font-bold">anuj.engineering.ai@gmail.com</span>: "{msgContent}"
+              Payload delivered to <span className="text-cyan-300 font-bold">anujmark.edwin.ame@gmail.com</span>: "{msgContent}"
             </p>
             <p className="text-[11px] text-zinc-500">SLA: Anuj reviews terminal dispatches in &lt; 12 hours.</p>
           </div>
@@ -449,7 +449,7 @@ export function TerminalModal({ isOpen, onClose }: TerminalModalProps) {
             <p className="text-cyan-400 font-bold">[ DIRECT COMMUNICATIONS ENCRYPTION CHANNEL ]</p>
             <p>GitHub: <a href="https://github.com/anujmundu" target="_blank" rel="noreferrer" className="text-emerald-400 underline hover:text-white">github.com/anujmundu</a></p>
             <p>LinkedIn: <a href="https://linkedin.com/in/anujmundu" target="_blank" rel="noreferrer" className="text-cyan-400 underline hover:text-white">linkedin.com/in/anujmundu</a></p>
-            <p>Direct Gmail: <span className="text-amber-300">anuj.engineering.ai@gmail.com</span></p>
+            <p>Direct Gmail: <span className="text-amber-300">anujmark.edwin.ame@gmail.com</span></p>
             <p className="text-emerald-300 pt-1">⚡ Fast Terminal Dispatch: type <span className="text-white font-bold bg-white/[0.1] px-1 rounded">msg &lt;your note or email&gt;</span> to send directly to Anuj's inbox!</p>
             <p className="text-[11px] text-zinc-500">Location: Bhopal, India · Open for Global Remote & Relocation</p>
           </div>

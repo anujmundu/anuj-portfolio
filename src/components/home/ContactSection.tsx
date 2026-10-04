@@ -27,7 +27,7 @@ export function ContactSection() {
   const [isLoading, setIsLoading] = useState(false);
   const [isSent, setIsSent] = useState(false);
   const [activeTopic, setActiveTopic] = useState<string | null>(null);
-  const email = "anuj.engineering.ai@gmail.com";
+  const email = "anujmark.edwin.ame@gmail.com";
 
   const placeholders = [
     "Ask about Computer Vision pipeline latency...",
@@ -257,7 +257,7 @@ export function ContactSection() {
                     <span>SIGNAL TRANSMISSION ACKNOWLEDGED (STATUS 200 OK)</span>
                   </div>
                   <p className="text-zinc-300 font-sans text-xs">
-                    Your inquiry has been packaged and delivered directly into Anuj's Gmail inbox (<span className="text-cyan-300 font-mono">anuj.engineering.ai@gmail.com</span>). Anuj will reply to {senderContact.trim() || "your address"} within 12 hours.
+                    Your inquiry has been packaged and delivered directly into Anuj's Gmail inbox (<span className="text-cyan-300 font-mono">anujmark.edwin.ame@gmail.com</span>). Anuj will reply to {senderContact.trim() || "your address"} within 12 hours.
                   </p>
                   <a
                     href={`mailto:${email}?subject=Portfolio%20Inquiry&body=${encodeURIComponent(inquiryText)}`}
@@ -269,7 +269,7 @@ export function ContactSection() {
                 </div>
               ) : (
                 <div className="flex items-center justify-between text-[11px] font-mono text-zinc-500 pt-1">
-                  <span>Direct inbox dispatch to anuj.engineering.ai@gmail.com</span>
+                  <span>Direct inbox dispatch to anujmark.edwin.ame@gmail.com</span>
                   <span>TLS 1.3 encrypted</span>
                 </div>
               )}
